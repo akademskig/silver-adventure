@@ -1,24 +1,25 @@
 
 import React from "react"
-import { Link } from "react-router-dom";
-const Navigation: React.FC = () => {
-
+import { NavLink, RouteComponentProps } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
+const Navigation: React.FC = (props:any) => {
     return (
-        <nav>
-            <ul>
-                <Link to="all_contacts">
-                    <li>
+        <nav className="navigation">
+            <ul className="navigation__list">
+                <NavLink to="all_contacts"  >
+                    <li className={props.history.location.pathname === "/all_contacts" ? "nav-item item-1 active" : "nav-item item-1"}>
                         All contacts
-                    </li>
-                </Link>
-                <Link to="my_favourites">
-                    <li>
+                        </li>
+                </NavLink>
+                <NavLink to="my_favorites">
+                    <li className={props.history.location.pathname === "/my_favorites" ? "nav-item item-2 active" : "nav-item item-2"}>
                         My favorites
                     </li>
-                </Link>
+                </NavLink>
             </ul>
         </nav>
     )
 }
 
-export default Navigation
+export default withRouter(Navigation)
+
