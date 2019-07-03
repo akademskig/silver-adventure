@@ -4,10 +4,10 @@ import searchIcon from "../assets/search.svg"
 const SearchBar = () => {
     return (
         <div className="search-container">
-            <div className="search-bar-container">
-                <img className="search-icon" src={searchIcon}></img>
+            <div className="search">
+                <img className="search__icon" src={searchIcon}></img>
                 <input
-                    className="search-bar"
+                    className="search__input"
                     type="text"
                 ></input>
             </div>
