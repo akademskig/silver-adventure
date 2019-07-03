@@ -5,10 +5,10 @@
     justify-content: center;
     list-style-type: none;
     padding: 50px;
-    margin:0;
+    margin: 0;
     border-bottom: solid 1.5px $theme-color-1;
 
-    a:-webkit-any-link {
+    a {
         color: inherit;
         cursor: pointer;
         text-decoration: none;
@@ -17,7 +17,6 @@
     .nav-item {
         text-decoration: none;
         font-weight: 700;
-        font-family: $theme-font;
         font-size: 14px;
         font-size: 18px;
         color: #BBC4C3;
