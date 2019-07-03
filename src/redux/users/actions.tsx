@@ -6,16 +6,16 @@ export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCSESS"
 export const FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
 
 export const fetchUsers = () => {
-    return (dispatch: Dispatch<FetchUsersAction>)=> {
+    return (dispatch: Dispatch<FetchUsersAction>) => {
         dispatch(fetchUsersBegin())
         return fetch("/data/users.json")
             .then(handleErrors)
-            .then(res=>res.json())
-            .then(data=>{
-                dispatch(fetchUsersSuccess(data.users))
-                return data.users
+            .then(res => res.json())
+            .then(data => {
+                dispatch(fetchUsersSuccess(data))
+                return data
             })
-            .catch(error=>dispatch(fetchUsersError(error)))
+            .catch(error => dispatch(fetchUsersError(error)))
     }
 }
 
