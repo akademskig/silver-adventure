@@ -5,7 +5,7 @@ const SearchBar = () => {
     return (
         <div className="search-container">
             <div className="search">
-                <img className="search__icon" src={searchIcon}></img>
+                <img alt="Search icon" className="search__icon" src={searchIcon}></img>
                 <input
                     className="search__input"
                     type="text"
