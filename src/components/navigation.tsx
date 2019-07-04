@@ -1,6 +1,6 @@
 
 import React from "react"
-import { NavLink, RouteComponentProps } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 const Navigation: React.FC = (props:any) => {
     return (

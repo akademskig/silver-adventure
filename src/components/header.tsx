@@ -1,4 +1,4 @@
-import appLogo from "../assets/logo.svg"
+import appLogo from "../assets/logos/logo.svg"
 import React from 'react';
 
 const Header: React.FC = () => {
