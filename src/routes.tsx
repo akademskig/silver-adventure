@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import allContactsPage from './pages/allContactsPage';
 import myFavoritesPage from './pages/myFavoritesPage';
-import EditPage from './pages/editPage';
+import EditPage from './pages/EditPage';
 import ContactsPage from './pages/ContactsPage';
 
 export default class MainRoutes extends React.Component {
