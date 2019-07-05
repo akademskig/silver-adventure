@@ -3,8 +3,8 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import allContactsPage from './pages/allContactsPage';
 import myFavoritesPage from './pages/myFavoritesPage';
-import EditPage from './pages/EditPage';
 import ContactsPage from './pages/ContactsPage';
+import ContactEditPage from './pages/ContactEditPage';
 
 export default class MainRoutes extends React.Component {
     render() {
@@ -33,7 +33,7 @@ export class EditRoutes extends React.Component {
     render() {
         return (
             <Switch>
-                <Route path={`/contact/edit/:id`} component={EditPage} />
+                <Route path={`/contact/:id/edit`} component={ContactEditPage} />
             </Switch>
         )
     }
