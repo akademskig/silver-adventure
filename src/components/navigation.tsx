@@ -2,7 +2,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
-const Navigation: React.FC = (props:any) => {
+const Navigation: React.FC = (props: any) => {
     return (
         <nav className="navigation">
             <ul className="navigation__list">
