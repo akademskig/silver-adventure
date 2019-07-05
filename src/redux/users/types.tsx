@@ -4,7 +4,8 @@ export type User = {
     first_name: string,
     last_name: string,
     email: string,
-    phone_numbers: Array<string>
+    phone_numbers: Array<string>,
+    profile_photo: string
 }
 
 export interface UserListState {
@@ -21,4 +22,3 @@ export interface FetchUsersAction {
         filtered_users?: Array<User>
     }
 }
-
