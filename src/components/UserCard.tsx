@@ -11,25 +11,27 @@ class UserCard extends React.Component<any, UserListState, any>{
     render() {
         const { user } = this.props
         return (
-            <div className="card">
-                <div className="card__icons">
-                    <span>
-                        <img src={icoHearthEmpty}></img>
-                    </span>
-                    <span className="icons__right">
-                        <Link to={`/contact/edit/${user.id}`}>
-                            <img src={icoEdit}></img>
-                        </Link>
-                        <img src={icoDelete}></img>
-                    </span>
+            <Link to={`/contact/${user.id}`}>
+                <div className="card">
+                    <div className="card__icons">
+                        <span>
+                            <img src={icoHearthEmpty}></img>
+                        </span>
+                        <span className="icons__right">
+                            <Link to={`/contact/${user.id}/edit`}>
+                                <img src={icoEdit}></img>
+                            </Link>
+                            <img src={icoDelete}></img>
+                        </span>
+                    </div>
+                    <div className="card__img">
+                        <img src={user.profile_photo} alt="profile photo"></img>
+                    </div>
+                    <div className="card__name">
+                        <p>{capitalize(user.first_name)} {capitalize(user.last_name)}</p>
+                    </div>
                 </div>
-                <div className="card__img">
-                    <img src={user.profile_photo} alt="profile photo"></img>
-                </div>
-                <div className="card__name">
-                    <p>{capitalize(user.first_name)} {capitalize(user.last_name)}</p>
-                </div>
-            </div>
+            </Link>
         )
     }
 }
