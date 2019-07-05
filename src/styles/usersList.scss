@@ -1,0 +1,22 @@
+@import "./mixins";
+
+.card-list {
+    margin: 0 auto 50px auto;
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1.5vw;
+
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include tablet {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
