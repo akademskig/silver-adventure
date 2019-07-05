@@ -3,12 +3,14 @@ import { User, UserListState } from "../redux/users/types";
 import { connect } from "react-redux";
 import { fetchUsers } from "../redux/users/actions";
 import UserCard from "../components/UserCard"
-class UserCardList extends React.Component<any, UserListState, any> {
+
+class UsersList extends React.Component<any, UserListState, any> {
 
     componentDidMount() {
-        this.props.dispatch(fetchUsers())
+        if (this.props.users.length == 0)
+            this.props.dispatch(fetchUsers())
     }
-   
+
     render() {
         const { error, loading, users } = this.props;
         if (error) {
@@ -20,11 +22,11 @@ class UserCardList extends React.Component<any, UserListState, any> {
         }
 
         return (
-          <div className="card-list">
+            <div className="card-list">
                 {users && users.map((user: any) =>
                     <UserCard key={user.login.uuid} user={user}></UserCard>
                 )}
-          </div>
+            </div>
         );
     }
 }
@@ -43,4 +45,4 @@ const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserCardList)
+export default connect(mapStateToProps, mapDispatchToProps)(UsersList)
