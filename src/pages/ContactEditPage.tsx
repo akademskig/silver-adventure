@@ -1,5 +1,5 @@
 import React from "react"
-export default class EditPage extends React.Component{
+export default class ContactEditPage extends React.Component{
 
     render(){
         return(
