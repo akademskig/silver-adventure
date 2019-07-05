@@ -1,7 +1,7 @@
 import React from 'react';
 import "./styles/index.scss"
 import Header from "./components/header"
-import NavigationRoutes, { EditRoutes } from './routes';
+import NavigationRoutes, { ContactSubroutes } from './routes';
 
 class App extends React.Component {
 
@@ -11,7 +11,7 @@ class App extends React.Component {
         <Header></Header>
         <div className="app__content">
           <NavigationRoutes></NavigationRoutes>
-          <EditRoutes></EditRoutes>
+          <ContactSubroutes></ContactSubroutes>
         </div>
       </div>
     );

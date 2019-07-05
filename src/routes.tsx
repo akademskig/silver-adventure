@@ -5,6 +5,7 @@ import allContactsPage from './pages/allContactsPage';
 import myFavoritesPage from './pages/myFavoritesPage';
 import ContactsPage from './pages/ContactsPage';
 import ContactEditPage from './pages/ContactEditPage';
+import ContactDetailsPage from './pages/ContactDetailsPage';
 
 export default class MainRoutes extends React.Component {
     render() {
@@ -29,10 +30,11 @@ export class ContactRoutes extends React.Component {
     }
 }
 
-export class EditRoutes extends React.Component {
+export class ContactSubroutes extends React.Component {
     render() {
         return (
             <Switch>
+                <Route path={`/contact/:id`} component={ContactDetailsPage} />
                 <Route path={`/contact/:id/edit`} component={ContactEditPage} />
             </Switch>
         )
