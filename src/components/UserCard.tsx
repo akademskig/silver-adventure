@@ -4,6 +4,8 @@ import { capitalize } from "../utils"
 import icoHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
 import icoEdit from "../assets/icons/icon-edit.svg"
 import icoDelete from "../assets/icons/icon-delete.svg"
+import { Link } from "react-router-dom";
+
 class UserCard extends React.Component<any, UserListState, any>{
 
     render() {
@@ -15,7 +17,9 @@ class UserCard extends React.Component<any, UserListState, any>{
                         <img src={icoHearthEmpty}></img>
                     </span>
                     <span className="icons__right">
-                        <img src={icoEdit}></img>
+                        <Link to={`/contact/edit/${user.id}`}>
+                            <img src={icoEdit}></img>
+                        </Link>
                         <img src={icoDelete}></img>
                     </span>
                 </div>
