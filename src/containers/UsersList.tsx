@@ -12,7 +12,7 @@ class UsersList extends React.Component<any, UserListState, any> {
     }
 
     render() {
-        const { error, loading, users } = this.props;
+        const { error, loading,  filtered_users } = this.props;
         if (error) {
             return <div>Error! {error.message}</div>;
         }
@@ -23,8 +23,8 @@ class UsersList extends React.Component<any, UserListState, any> {
 
         return (
             <div className="card-list">
-                {users && users.map((user: any) =>
-                    <UserCard key={user.login.uuid} user={user}></UserCard>
+                {filtered_users && filtered_users.map((user: any) =>
+                    <UserCard key={user.id} user={user}></UserCard>
                 )}
             </div>
         );
@@ -34,6 +34,7 @@ class UsersList extends React.Component<any, UserListState, any> {
 const mapStateToProps = (state: any) => {
     return {
         users: state.usersReducer.users,
+        filtered_users:state.usersReducer.filtered_users,
         loading: state.usersReducer.loading,
         error: state.usersReducer.error
     }
