@@ -10,7 +10,7 @@ import { FetchUsersAction } from './types';
 
 const initialState = {
     users: [],
-    user:{},
+    user: null,
     filtered_users: [],
     loading: false,
     error: null
