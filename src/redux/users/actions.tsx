@@ -4,6 +4,7 @@ export const FETCH_USERS_BEGIN = "FETCH_USERS_BEGIN"
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCSESS"
 export const FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
 export const SEARCH_USERS = "SEARCH_USERS"
+export const FETCH_USER = "FETCH_USER"
 
 const USERS_API = "https://randomuser.me/api/?results=22&nat=gb&inc=name,gender,picture,phone,cell,email&noinfo"
 export const fetchUsers = () => {
@@ -15,6 +16,7 @@ export const fetchUsers = () => {
             .then(data => {
                 let editedData: User = editData(data)
                 dispatch(fetchUsersSuccess(editedData))
+                console.group(editedData)
                 return editedData
             })
             .catch(error => dispatch(fetchUsersError(error)))
@@ -41,7 +43,7 @@ const editData = (data: any) => {
                     break;
                 }
                 case ("picture"): {
-                    profilePhoto = r[key].thumbnail
+                    profilePhoto = r[key].large
                 }
             }
             obj = Object.assign({}, obj, { id: i, phones: phones, favorite: false, profile_photo: profilePhoto, email: r.email })
@@ -62,18 +64,26 @@ export const fetchUsersSuccess = (users: any) =>
     })
 
 
-export const searchUsers = (users: any) => {
-    return ({
-        type: SEARCH_USERS,
-        payload: { filtered_users: users }
-    })
-}
 
 export const fetchUsersError = (error: any) =>
     ({
         type: FETCH_USERS_ERROR,
         payload: { error }
     })
+
+    export const searchUsers = (users: any) => {
+        return ({
+            type: SEARCH_USERS,
+            payload: { filtered_users: users }
+        })
+    }
+
+    export const fetchUser = (user: any) => {
+        return ({
+            type: FETCH_USER,
+            payload: { user: user }
+        })
+    }
 
 const handleErrors = (response: Response) => {
     if (!response.ok) {

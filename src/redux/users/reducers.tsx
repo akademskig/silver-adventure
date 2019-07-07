@@ -2,13 +2,15 @@ import {
     FETCH_USERS_BEGIN,
     FETCH_USERS_SUCCESS,
     FETCH_USERS_ERROR,
-    SEARCH_USERS
+    SEARCH_USERS,
+    FETCH_USER
 } from './actions'
 import { Reducer } from 'react';
 import { FetchUsersAction } from './types';
 
 const initialState = {
     users: [],
+    user:{},
     filtered_users: [],
     loading: false,
     error: null
@@ -24,6 +26,7 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
         }
         case FETCH_USERS_SUCCESS: {
             return {
+                ...state,
                 users: action.payload ? action.payload.users : [],
                 filtered_users: action.payload ? action.payload.users : [],
                 loading: false
@@ -37,12 +40,20 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
                 users: []
             }
         }
-        case SEARCH_USERS:{
+        case SEARCH_USERS: {
             return {
                 ...state,
                 loading: false,
                 error: action.payload ? action.payload.error : null,
-                filtered_users: action.payload  ? action.payload.filtered_users : [],
+                filtered_users: action.payload ? action.payload.filtered_users : [],
+            }
+        }
+        case FETCH_USER: {
+            return {
+                ...state,
+                loading: false,
+                error: action.payload ? action.payload.error : null,
+                user: action.payload ? action.payload.user : {}
             }
         }
 
