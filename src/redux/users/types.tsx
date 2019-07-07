@@ -1,11 +1,18 @@
+import { string } from "prop-types";
 
 export type User = {
     id: number,
     first_name: string,
     last_name: string,
     email: string,
-    phone_numbers: Array<string>,
+    phones: Array<PhoneItem>,
     profile_photo: string
+}
+
+interface PhoneItem {
+    label: string,
+    name: string,
+    number: string
 }
 
 export interface UserListState {
