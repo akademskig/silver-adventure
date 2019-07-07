@@ -19,6 +19,7 @@ export interface FetchUsersAction {
     payload?: {
         users?: Array<User>,
         error?: Error
-        filtered_users?: Array<User>
+        filtered_users?: Array<User>,
+        user?: User
     }
 }
