@@ -34,8 +34,8 @@ export class ContactSubroutes extends React.Component {
     render() {
         return (
             <Switch>
-                <Route path={`/contact/:id`} component={ContactDetailsPage} />
-                <Route path={`/contact/:id/edit`} component={ContactEditPage} />
+                <Route path={`/contacts/:id/edit`} render={() => <ContactEditPage {...this.props}></ContactEditPage>} />
+                <Route path={`/contacts/:id`} render={() => <ContactDetailsPage {...this.props}></ContactDetailsPage>} />
             </Switch>
         )
     }
