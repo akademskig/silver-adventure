@@ -1,11 +1,13 @@
-
-
 .app__header {
     background-image: linear-gradient(-90deg, #78C9CE, #2496A2, #2496A2);
     position: relative;
     height: 60px;
     display: flex;
     justify-content: center;
+
+    a {
+        display: flex;
+    }
 
     .app__header__line {
         position: absolute;
