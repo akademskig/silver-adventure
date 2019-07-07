@@ -1,15 +1,9 @@
 import React from "react"
-import { User, UserListState } from "../redux/users/types";
+import { UserListState } from "../redux/users/types";
 import { connect } from "react-redux";
-import { fetchUsers } from "../redux/users/actions";
 import UserCard from "../components/UserCard"
 
 class UsersList extends React.Component<any, UserListState, any> {
-
-    componentDidMount() {
-        if (this.props.users.length == 0)
-            this.props.dispatch(fetchUsers())
-    }
 
     render() {
         const { error, loading,  filtered_users } = this.props;
