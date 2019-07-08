@@ -1,0 +1,26 @@
+@import "../variables";
+@import "../mixins";
+
+.icons-bar--mobile {
+    display: none;
+}
+
+@include xs-mobile-only {
+    .icons-bar--mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8em 1em 0.8em 1em;
+        margin: 0 -5vw 0 -5vw;
+        border-bottom: 2px solid $theme-color-gray;
+
+        img {
+            cursor: pointer;
+        }
+
+        .icons-bar__right {
+            width: 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

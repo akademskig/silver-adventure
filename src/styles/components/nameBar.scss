@@ -1,0 +1,44 @@
+@import "../variables";
+
+.contact-name {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px $theme-color-1;
+
+
+    h2 {
+        display: inline-block;
+        margin-left: 1vw;
+        color: $theme-color-gray;
+    }
+
+    .contact-name__right,
+    .contact-name__left {
+        display: flex;
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .contact-name__right {
+        display: flex;
+        justify-content: space-between;
+        width: 10%;
+    }
+
+    .contact-name__left {
+        >img {
+            margin-right: 0.3em;
+            width: 20px;
+            cursor: pointer;
+
+        }
+    }
+}
+
+@include xs-mobile-only {
+    .contact-name {
+        display: none;
+    }
+}

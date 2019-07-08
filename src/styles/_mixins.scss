@@ -1,3 +1,9 @@
+@mixin xs-mobile-only {
+    @media(max-width: $xs-breakpoint) {
+        @content;
+    }
+}
+
 @mixin mobile {
     @media(max-width: $sm-breakpoint) {
         @content;

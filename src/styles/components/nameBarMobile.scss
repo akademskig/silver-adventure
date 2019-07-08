@@ -1,0 +1,28 @@
+.contact-name--mobile {
+    display: none;
+    border-bottom: solid 2px $theme-color-1;
+    align-items: center;
+    padding: 0.9em 0 0.9em 0;
+
+    h2 {
+        margin-left: 1vw;
+        color: $theme-color-gray;
+        font-size: 21px;
+    }
+
+    .contact-name__img {
+        margin-right: 3%;
+
+        img {
+            width: 50px;
+            border-radius: 50%;
+            border: 3px solid rgba($theme-color-gray, 0.3);
+        }
+    }
+}
+
+@include xs-mobile-only {
+    .contact-name--mobile {
+        display: flex;
+    }
+}
