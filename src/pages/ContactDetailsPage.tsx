@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { fetchUser } from "../redux/users/actions";
 import { User } from "../redux/users/types";
 import { withRouter } from "react-router";
-import ContactDetails from "../components/ContactDetails";
+import ContactDetails from "../components/contactDetails/ContactDetails";
 
 
 class ContactDetailsPage extends React.Component<any> {
