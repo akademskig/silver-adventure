@@ -3,11 +3,8 @@ import { connect } from "react-redux"
 import { fetchUser } from "../redux/users/actions";
 import { User } from "../redux/users/types";
 import { withRouter } from "react-router";
-import iconPhone from "../assets/icons/phone.svg"
-import iconEmail from "../assets/icons/email.svg"
-import iconBack from "../assets/icons/arrow-back.svg"
-import iconHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
-import iconEdit from "../assets/icons/icon-edit.svg"
+import ContactDetails from "../components/ContactDetails";
+
 
 class ContactDetailsPage extends React.Component<any> {
     componentWillReceiveProps(props: any) {
@@ -20,50 +17,12 @@ class ContactDetailsPage extends React.Component<any> {
 
     render() {
         const { user } = this.props
+
         return (
-            user ? (
-                <div className="contact-details">
-                    <div className="contact-details__img">
-                        <img src={user.profile_photo}></img>
-                    </div>
-                    <div className="contact-details__info">
-                        <div className="name">
-                            <img src={iconBack}></img>
-
-                            <h2>{user.first_name} {user.last_name}</h2>
-                            <img src={iconHearthEmpty}></img>
-                            <img src={iconEdit}></img>
-                        </div>
-                        <div className="email">
-                            <img src={iconEmail}></img>
-                            <span>email</span>
-                            <p>{user.email}</p>
-                        </div>
-                        <div className="numbers">
-                            <img src={iconPhone}></img>
-                            <span>numbers</span>
-                            <ul>
-                                {user.phones && user.phones.map((p: any) => {
-                                    return (
-                                        <li className="phone-list">
-                                            <span>
-                                                {p.name.toUpperCase()}
-                                            </span>
-                                            <span>
-                                                {p.number}
-                                            </span>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            ) : <div></div>
-        )
+            user ? <ContactDetails {...this.props}></ContactDetails> : <div></div>)
     }
 }
+
 
 const mapStateToProps = (state: any) => {
     return {
