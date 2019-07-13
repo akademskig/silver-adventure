@@ -10,7 +10,6 @@ import ProfilePhoto from "./ProfilePhoto";
 
 const ContactDetails = (props: any) => {
     const { user, history }: { user: User, history: History } = props
-    console.log("details")
     return (
         <React.Fragment>
             <IconsBarMobile {...history}></IconsBarMobile>
