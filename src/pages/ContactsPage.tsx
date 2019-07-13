@@ -1,8 +1,7 @@
 import React, { Fragment } from "react"
-import { ContactRoutes } from '../routes';
+import { ContactRoutes, ContactSubroutes } from '../routes';
 import { connect } from "react-redux";
 import { fetchUsers } from "../redux/users/actions";
-import ContactViewPage from "./ContactViewPage";
 
 class ContactsPage extends React.Component<any> {
     componentDidMount() {
@@ -13,7 +12,7 @@ class ContactsPage extends React.Component<any> {
         return (
             <React.Fragment>
                 <ContactRoutes></ContactRoutes>
-                <ContactViewPage ></ContactViewPage>
+                <ContactSubroutes {...this.props}></ContactSubroutes>
             </React.Fragment>
         )
     }
