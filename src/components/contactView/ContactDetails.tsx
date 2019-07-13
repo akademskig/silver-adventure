@@ -6,16 +6,16 @@ import iconPhone from "../../assets/icons/phone.svg";
 import IconsBarMobile from "./IconsBarMobile";
 import NameBar from "./NameBar";
 import NameBarMobile from "./NameBarMobile";
+import ProfilePhoto from "./ProfilePhoto";
 
 const ContactDetails = (props: any) => {
     const { user, history }: { user: User, history: History } = props
+    console.log("details")
     return (
         <React.Fragment>
             <IconsBarMobile {...history}></IconsBarMobile>
             <div className="contact-details">
-                <div className="contact-details__img">
-                    <img src={user.profile_photo}></img>
-                </div>
+                <ProfilePhoto {...props}></ProfilePhoto>
                 <NameBarMobile {...user}></NameBarMobile>
                 <div className="contact-details__info">
                     <NameBar {...props}></NameBar>
@@ -53,19 +53,15 @@ const ContactDetails = (props: any) => {
                         </div>
                     </div>
                     <div className="contact-info__item phones">
-
                     </div>
                 </div>
             </div>
         </React.Fragment>
-
     )
-
 }
 
 
 
 
-
-
 export default ContactDetails
+
