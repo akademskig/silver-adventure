@@ -3,20 +3,16 @@ import { connect } from "react-redux"
 import { fetchUser } from "../redux/users/actions";
 import { User } from "../redux/users/types";
 import { withRouter } from "react-router";
-import ContactDetails from "../components/contactDetails/ContactDetails";
+import ContactDetails from "../components/contactView/ContactDetails";
 
 
 class ContactDetailsPage extends React.Component<any> {
-    componentWillReceiveProps(props: any) {
-        const { users, dispatch, match } = props
-        if (props.users.length > 0) {
+    render() {
+        const { users, dispatch, match,user } = this.props
+        if (users.length > 0) {
             const user = users.find((u: User) => u.id == match.params.id)
             dispatch(fetchUser(user))
         }
-    }
-
-    render() {
-        const { user } = this.props
 
         return (
             user ? <ContactDetails {...this.props}></ContactDetails> : <div></div>)
