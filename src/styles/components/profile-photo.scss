@@ -1,0 +1,128 @@
+.contact-details__img {
+    display: flex;
+    position: relative;
+
+    img {
+        border-radius: 50%;
+    }
+
+    .img__desktop {
+        img {
+            margin-right: 3%;
+            width: 180px;
+            border: 3px solid rgba($theme-color-gray, 0.3);
+        }
+    }
+
+    .img__mobile,
+    .img__mobile--edit {
+        img {
+            border: 3px solid rgba($theme-color-gray, 0.3);
+            display: none;
+        }
+    }
+
+    .img__mobile {
+        width: 50px;
+    }
+
+    .img__mobile--edit {
+        img {
+            margin: auto;
+            width: 180px;
+
+        }
+    }
+
+    .img-cover {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 3px solid $theme-color-gray;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .img-cover {
+        position: absolute;
+
+        img {
+            position: absolute;
+            left: 42%;
+            top: 44%
+        }
+
+    }
+}
+
+@include mobile {
+    .contact-details__img {
+        margin-right: 3%;
+        border-radius: 50%;
+
+
+        .img__desktop {
+            img {
+                width: 90px;
+            }
+        }
+
+        .img-cover {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.4);
+
+            img {
+                left: 36%;
+                top: 38%
+            }
+
+        }
+    }
+}
+
+@include xs-mobile-only {
+    .contact-details__img {
+        justify-content: center;
+
+        .img__desktop {
+            img {
+                display: none;
+            }
+        }
+
+
+        .img__mobile--edit {
+            margin-top: 23px;
+
+            img {
+                width: 150px;
+                display: block;
+            }
+        }
+
+        .img__mobile {
+            img {
+                display: block;
+                width: 50px;
+
+            }
+        }
+
+        .img-cover {
+            margin-top: 23px;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+
+            img {
+                left: 40%;
+                top: 42%
+            }
+
+        }
+
+    }
+
+}

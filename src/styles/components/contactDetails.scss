@@ -8,15 +8,8 @@
     display: grid;
     grid-template-columns: 180px auto;
     grid-gap: 2vw;
-
-    .contact-details__img {
-        margin-right: 3%;
-
-        img {
-            width: 180px;
-            border-radius: 50%;
-            border: 3px solid rgba($theme-color-gray, 0.3);
-        }
+    .profile-mobile{
+        display:block;
     }
 
     .contact-details__info {
@@ -113,15 +106,6 @@
             }
         }
     }
-
-    .contact-details__img {
-        margin-right: 3%;
-
-        img {
-            max-width: 90px;
-            border-radius: 50%;
-        }
-    }
 }
 
 @include xs-mobile-only {
@@ -129,11 +113,9 @@
         width: 100%;
         display: block;
         margin-top: 0;
-
-        .contact-details__img {
-            display: none;
+        .profile-mobile{
+            display:none;
         }
-
         .contact-details__info {
             margin-top: 1.5em;
 

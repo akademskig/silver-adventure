@@ -14,8 +14,10 @@ const ContactDetails = (props: any) => {
         <React.Fragment>
             <IconsBarMobile {...history}></IconsBarMobile>
             <div className="contact-details">
-                <ProfilePhoto {...props}></ProfilePhoto>
-                <NameBarMobile {...user}></NameBarMobile>
+                <div className="profile-mobile">
+                    <ProfilePhoto {...props}></ProfilePhoto>
+                </div>
+                <NameBarMobile {...props}></NameBarMobile>
                 <div className="contact-details__info">
                     <NameBar {...props}></NameBar>
                     <div className="contact-info">

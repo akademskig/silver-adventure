@@ -14,8 +14,7 @@ const ContactEdit = (props: any) => {
         <React.Fragment>
             <IconsBarMobile {...history}></IconsBarMobile>
             <div className="contact-details">
-              <ProfilePhoto user={user} imgType="edit"></ProfilePhoto>
-                <NameBarMobile {...user}></NameBarMobile>
+                <ProfilePhoto {...props} imgType="edit"></ProfilePhoto>
                 <div className="contact-details__info">
                     <NameBar {...props}></NameBar>
                     <div className="contact-info">
