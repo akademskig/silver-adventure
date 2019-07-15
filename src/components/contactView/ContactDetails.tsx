@@ -53,8 +53,6 @@ const ContactDetails = (props: any) => {
                             </ul>
                         </div>
                     </div>
-                    <div className="contact-info__item phones">
-                    </div>
                 </div>
             </div>
         </React.Fragment>
