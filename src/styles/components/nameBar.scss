@@ -4,7 +4,8 @@
     display: flex;
     justify-content: space-between;
     border-bottom: solid 2px $theme-color-1;
-
+    height: 4em;
+    margin-top: 0.5em;
 
     h2 {
         display: inline-block;
@@ -12,9 +13,14 @@
         color: $theme-color-gray;
     }
 
+    .icon.icon-desktop {
+        width: 0.8125em;
+    }
+
     .contact-name__right,
     .contact-name__left {
         display: flex;
+        align-items: center;
 
         img {
             cursor: pointer;
@@ -24,11 +30,16 @@
     .contact-name__right {
         display: flex;
         justify-content: space-between;
-        width: 10%;
+        width: 11%;
+
+        .icon-text {
+            color: $theme-color-gray;
+            font-size: 0.875em;
+        }
     }
 
     .contact-name__left {
-        >img {
+        >img.icon.icon-desktop-large {
             margin-right: 0.3em;
             width: 20px;
             cursor: pointer;

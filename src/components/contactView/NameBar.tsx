@@ -3,22 +3,33 @@ import { capitalize } from "../../utils";
 import iconBack from "../../assets/icons/arrow-back.svg"
 import iconHearthEmpty from "../../assets/icons/icon-hearth-empty.svg"
 import iconEdit from "../../assets/icons/icon-edit.svg"
-
+import iconTrash from "../../assets/icons/delete.svg"
 
 const NameBar = (props: any) => {
-    const { user, history } = props
+    const { user, history, mode } = props
     const onClickBack = (_: React.MouseEvent) => {
         history.goBack()
     }
     return (
         <div className="contact-name">
             <span className="contact-name__left">
-                <img src={iconBack} onClick={onClickBack}></img>
-                <h2>{capitalize(user.first_name)} {capitalize(user.last_name)}</h2>
+                <img className="icon icon-desktop-large"src={iconBack} onClick={onClickBack}></img>
+                {mode === "details" && <h2>{capitalize(user.first_name)} {capitalize(user.last_name)}</h2>}
             </span>
             <span className="contact-name__right">
-                <img src={iconHearthEmpty}></img>
-                <img src={iconEdit}></img>
+                {mode === "details" &&
+                    <React.Fragment>
+                        <img className="icon icon-desktop"src={iconHearthEmpty}></img>
+                        <img className="icon icon-desktop"src={iconEdit}></img>
+                    </React.Fragment>
+                }
+                {mode === "edit" &&
+                    <React.Fragment>
+                        <span className="icon-text">Delete</span>
+                        <img className="icon icon-desktop"src={iconTrash}></img>
+                    </React.Fragment>
+                }
+
             </span>
         </div>
     )

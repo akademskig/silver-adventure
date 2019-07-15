@@ -19,7 +19,7 @@ const ContactDetails = (props: any) => {
                 </div>
                 <NameBarMobile {...props}></NameBarMobile>
                 <div className="contact-details__info">
-                    <NameBar {...props}></NameBar>
+                    <NameBar mode="details"{...props}></NameBar>
                     <div className="contact-info">
                         <div className="contact-info__email">
                             <div className="email__label label">

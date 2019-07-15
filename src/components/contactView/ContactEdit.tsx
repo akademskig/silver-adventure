@@ -16,7 +16,8 @@ const ContactEdit = (props: any) => {
             <div className="contact-details">
                 <ProfilePhoto {...props} imgType="edit"></ProfilePhoto>
                 <div className="contact-details__info">
-                    <NameBar {...props}></NameBar>
+                    <NameBar mode="edit"{...props}></NameBar>
+                    
                     <div className="contact-info">
                         <div className="contact-info__email">
                             <div className="email__label label">
