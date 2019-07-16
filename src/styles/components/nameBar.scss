@@ -13,10 +13,7 @@
         color: $theme-color-gray;
     }
 
-    .icon.icon-desktop {
-        width: 0.8125em;
-    }
-
+   
     .contact-name__right,
     .contact-name__left {
         display: flex;
@@ -30,7 +27,7 @@
     .contact-name__right {
         display: flex;
         justify-content: space-between;
-        width: 11%;
+        width: 4em;
 
         .icon-text {
             color: $theme-color-gray;
