@@ -1,9 +1,9 @@
 import { Dispatch } from "react";
-import { FetchUsersAction, User } from "./types";
+import { FetchUsersAction } from "../types";
+import { User } from "../../types/user";
 export const FETCH_USERS_BEGIN = "FETCH_USERS_BEGIN"
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCSESS"
 export const FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
-export const SEARCH_USERS = "SEARCH_USERS"
 export const FETCH_USER = "FETCH_USER"
 
 const USERS_API = "https://randomuser.me/api/?results=22&nat=gb&inc=name,gender,picture,phone,cell,email&noinfo"
@@ -63,27 +63,18 @@ export const fetchUsersSuccess = (users: any) =>
         payload: { users, filtered_users: users }
     })
 
-
-
 export const fetchUsersError = (error: any) =>
     ({
         type: FETCH_USERS_ERROR,
         payload: { error }
     })
 
-    export const searchUsers = (users: any) => {
-        return ({
-            type: SEARCH_USERS,
-            payload: { filtered_users: users }
-        })
-    }
-
-    export const fetchUser = (user: any) => {
-        return ({
-            type: FETCH_USER,
-            payload: { user: user }
-        })
-    }
+export const fetchUser = (user: any) => {
+    return ({
+        type: FETCH_USER,
+        payload: { user: user }
+    })
+}
 
 const handleErrors = (response: Response) => {
     if (!response.ok) {

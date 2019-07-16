@@ -1,6 +1,6 @@
-import { User } from "../../redux/users/types";
 import React from "react"
 import removeIcon from "../../assets/icons/remove.svg"
+import { User } from "../../types/user";
 
 const ProfilePhoto = (props: any) => {
     const { user, imgType }: { user: User, imgType: ImgType } = props

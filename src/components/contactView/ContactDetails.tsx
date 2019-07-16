@@ -1,12 +1,12 @@
 import { History } from "history";
 import React from "react";
-import { User } from "../../redux/users/types";
 import iconEmail from "../../assets/icons/email.svg";
 import iconPhone from "../../assets/icons/phone.svg";
 import IconsBarMobile from "./IconsBarMobile";
 import NameBar from "./NameBar";
 import NameBarMobile from "./NameBarMobile";
 import ProfilePhoto from "./ProfilePhoto";
+import { User } from "../../types/user";
 
 const ContactDetails = (props: any) => {
     const { user, history }: { user: User, history: History } = props

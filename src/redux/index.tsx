@@ -1,8 +1,13 @@
 import { combineReducers } from "redux"
-import usersReducer from "./users/reducers"
+import {fetchUsers, searchUsers} from "./reducers"
+import { reducer as formReducer } from 'redux-form'
 
 const rootReducer =  combineReducers({
-    usersReducer
+    fetchUsers,
+    searchUsers,
+    form: formReducer
 })
 
 export default rootReducer
+
+

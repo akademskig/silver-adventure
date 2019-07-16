@@ -1,4 +1,4 @@
-import { User } from "../redux/users/types";
+import { User } from "../types/user";
 
 export const capitalize = (string: string) => {
     return string.split("").map((c: string, i: number) =>

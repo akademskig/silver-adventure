@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { ContactRoutes, ContactSubroutes } from '../routes';
 import { connect } from "react-redux";
-import { fetchUsers } from "../redux/users/actions";
+import { fetchUsers } from "../redux/actions/fetchUsers";
 
 class ContactsPage extends React.Component<any> {
     componentDidMount() {
@@ -20,10 +20,10 @@ class ContactsPage extends React.Component<any> {
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.usersReducer.users,
-        filtered_users: state.usersReducer.filtered_users,
-        loading: state.usersReducer.loading,
-        error: state.usersReducer.error
+        users: state.fetchUsers.users,
+        filtered_users: state.fetchUsers.filtered_users,
+        loading: state.fetchUsers.loading,
+        error: state.fetchUsers.error
     }
 }
 

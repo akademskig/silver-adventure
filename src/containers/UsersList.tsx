@@ -1,5 +1,5 @@
 import React from "react"
-import { UserListState } from "../redux/users/types";
+import { UserListState } from "../redux/types";
 import { connect } from "react-redux";
 import UserCard from "../components/UserCard"
 
@@ -27,10 +27,7 @@ class UsersList extends React.Component<any, UserListState, any> {
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.usersReducer.users,
-        filtered_users:state.usersReducer.filtered_users,
-        loading: state.usersReducer.loading,
-        error: state.usersReducer.error
+        filtered_users:state.fetchUsers.filtered_users,
     }
 }
 

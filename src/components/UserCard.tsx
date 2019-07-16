@@ -1,5 +1,5 @@
 import React from "react";
-import { UserListState } from "../redux/users/types";
+import { UserListState } from "../redux/types";
 import { capitalize } from "../utils"
 import icoHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
 import icoEdit from "../assets/icons/icon-edit.svg"

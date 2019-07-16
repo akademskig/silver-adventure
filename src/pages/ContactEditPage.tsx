@@ -2,12 +2,10 @@ import React from "react"
 import { connect } from "react-redux"
 import { withRouter } from "react-router";
 import ContactEdit from "../components/contactView/ContactEdit";
-import { User } from "../redux/users/types";
-import { fetchUser } from "../redux/users/actions";
+import { User } from "../types/user";
+import { fetchUser } from "../redux/actions/fetchUsers";
 
 class ContactEditPage extends React.Component<any>{
-
-   
     render() {
         const { users, dispatch, match,user } = this.props
         if (users.length > 0) {
@@ -21,10 +19,8 @@ class ContactEditPage extends React.Component<any>{
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.usersReducer.users,
-        loading: state.usersReducer.loading,
-        error: state.usersReducer.error,
-        user: state.usersReducer.user
+        users: state.fetchUsers.users,
+        user: state.fetchUsers.user
     }
 }
 

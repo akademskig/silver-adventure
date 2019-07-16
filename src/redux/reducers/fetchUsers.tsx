@@ -2,11 +2,10 @@ import {
     FETCH_USERS_BEGIN,
     FETCH_USERS_SUCCESS,
     FETCH_USERS_ERROR,
-    SEARCH_USERS,
     FETCH_USER
-} from './actions'
+} from '../actions/fetchUsers'
 import { Reducer } from 'react';
-import { FetchUsersAction } from './types';
+import { FetchUsersAction } from '../types';
 
 const initialState = {
     users: [],
@@ -38,14 +37,6 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
                 loading: false,
                 error: action.payload ? action.payload.error : null,
                 users: []
-            }
-        }
-        case SEARCH_USERS: {
-            return {
-                ...state,
-                loading: false,
-                error: action.payload ? action.payload.error : null,
-                filtered_users: action.payload ? action.payload.filtered_users : [],
             }
         }
         case FETCH_USER: {
