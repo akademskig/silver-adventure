@@ -51,7 +51,8 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
         case UPDATE_USERS: {
             return {
                 ...state,
-                users: action.payload ? action.payload.users : []
+                users: action.payload ? action.payload.users : [],
+                filtered_users: action.payload ? action.payload.users : [],
             }
         }
 
