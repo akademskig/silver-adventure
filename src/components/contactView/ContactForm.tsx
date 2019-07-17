@@ -7,8 +7,8 @@ import { addPhoneNumber } from '../../redux/actions/contactForm';
 import { render } from 'react-dom';
 import validate from './contactFormValidate';
 let ContactForm = (props: any) => {
-    const {  handleSubmit, submitting, reset, invalid } = props
-   
+    const { handleSubmit, submitting, reset, invalid, onCancel } = props
+
     return (
         <form onSubmit={handleSubmit}>
             <div className="contact-form__form-section">
@@ -27,14 +27,14 @@ let ContactForm = (props: any) => {
             </div>
 
             <div className="form-btns">
-                <button className="btn btn-cancel" type="reset" onClick={reset}>Cancel</button>
+                <button className="btn btn-cancel" type="reset" onClick={onCancel}>Cancel</button>
                 <button className="btn btn-save" disabled={invalid || submitting} type="submit">Save</button>
             </div>
         </form>)
 }
 
 const renderNumberFields = (props: any) => {
-    const { fields, meta:{errors} } = props
+    const { fields, meta: { errors } } = props
     return (
         <div className="numbers-list">
             <ul>
@@ -50,7 +50,7 @@ const renderNumberFields = (props: any) => {
                         </li>
                     )
                 })}
-                 {errors && <li className="error">{errors}</li>}
+                {errors && <li className="error">{errors}</li>}
             </ul>
             <div>
                 <button type="button" onClick={() => fields.push()} className="btn btn-add-number round" name="add-number">

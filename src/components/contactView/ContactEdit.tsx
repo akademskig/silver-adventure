@@ -16,6 +16,9 @@ const ContactEdit = (props: any) => {
         dispatch(saveUsers(newUsers))
         history.goBack()
     }
+    const onCancel = () => {
+        history.goBack()
+    }
     return (
         <React.Fragment>
             <IconsBarMobile {...history}></IconsBarMobile>
@@ -23,7 +26,7 @@ const ContactEdit = (props: any) => {
                 <ProfilePhoto {...props} imgType="edit"></ProfilePhoto>
                 <div className="contact-details__info">
                     <NameBar mode="edit"{...props}></NameBar>
-                    <ContactForm onSubmit={onSubmit}{...props} ></ContactForm>
+                    <ContactForm onCancel={onCancel} onSubmit={onSubmit}{...props} ></ContactForm>
                 </div>
             </div>
         </React.Fragment>
