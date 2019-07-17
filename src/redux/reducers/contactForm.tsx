@@ -1,6 +1,6 @@
 
 import { Reducer } from 'react';
-import { ADD_PHONE_NUMBER, ADD_INITIAL_VALUES } from '../actions/contactForm';
+import { ADD_PHONE_NUMBER, ADD_INITIAL_VALUES, UPDATE_USERS } from '../actions/contactForm';
 
 const initialState = {
     user: null,
@@ -20,6 +20,12 @@ const contactFormReducer: Reducer<any, any> = (state = initialState, action: any
             return{
                 ...state,
                 userToEdit: action.payload ? action.payload.userToEdit: null
+            }
+        }
+        case UPDATE_USERS:{
+            return {
+                ...state,
+                users: action.payload.users
             }
         }
       
