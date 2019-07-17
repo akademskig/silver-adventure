@@ -1,9 +1,13 @@
 import { User } from "../types/user";
 
 export const capitalize = (string: string) => {
-    return string.split("").map((c: string, i: number) =>
-        i == 0 ? c.toLocaleUpperCase() : c
-    ).join("")
+    if (!string || string.length === 0)
+        return ""
+    return string.split(" ").map((subs: string) => {
+        return subs.split("").map((c: string, i: number) =>
+            i == 0 ? c.toLocaleUpperCase() : c
+        ).join("")
+    }).join(" ")
 }
 export const filterUsers = (users: Array<User>, value: any) => {
     if (value.match(/[!#$%^&*(),?":{}|<>+]/g)) {
