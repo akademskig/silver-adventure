@@ -10,7 +10,7 @@ const USERS_API = "https://randomuser.me/api/?results=22&nat=gb&inc=name,gender,
 const USERS_LIST = "USERS_LIST"
 const fetchUsers = () => {
     return (dispatch: Dispatch<FetchUsersAction>) => {
-        if(getUsers().length>0){
+        if (getUsers().length > 0) {
             return dispatch(fetchUsersSuccess(getUsers()))
         }
         dispatch(fetchUsersBegin())
@@ -66,7 +66,7 @@ const handleErrors = (response: Response) => {
 }
 const saveUsers = (users: User[]) => {
     localStorage.setItem(USERS_LIST, JSON.stringify(users))
-    return ( dispatch: Dispatch<any>)=>{
+    return (dispatch: Dispatch<any>) => {
         dispatch(updateUsers(users))
     }
 }
