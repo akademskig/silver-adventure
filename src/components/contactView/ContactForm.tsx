@@ -1,25 +1,14 @@
 import React from 'react'
-import { Field, reduxForm, ConfigProps } from 'redux-form'
+import { Field, reduxForm, ConfigProps, FieldArray } from 'redux-form'
 import iconAdd from "../../assets/icons/add.svg"
 import iconRemove from "../../assets/icons/remove.svg"
 import { connect } from 'react-redux';
 import { addPhoneNumber } from '../../redux/actions/contactForm';
+import { render } from 'react-dom';
+import validate from './contactFormValidate';
 let ContactForm = (props: any) => {
-    const { userToEdit, handleSubmit, pristine, submitting, reset, dispatch } = props
-    const phoneItem = {
-        name: "",
-        label: "",
-        number: ""
-    }
-    const handleAddNumber = () => {
-        const numbers = userToEdit.phones.concat(phoneItem)
-        dispatch(addPhoneNumber(numbers))
-    }
-    const handleRemoveNumber = (e: React.MouseEvent<HTMLButtonElement,MouseEvent>) => {
-        const index = parseInt(e.currentTarget.value)
-        const numbers = userToEdit.phones.filter((p:any, i:number)=>i!==index)
-        dispatch(addPhoneNumber(numbers))
-    }
+    const {  handleSubmit, submitting, reset, invalid } = props
+   
     return (
         <form onSubmit={handleSubmit}>
             <div className="contact-form__form-section">
@@ -32,36 +21,51 @@ let ContactForm = (props: any) => {
                 <Field name="email" component="input" type="email" />
             </div>
             <div className="contact-form__form-section">
-                <label htmlFor="numbers">Numbers</label>
-                {
-                    userToEdit.phones && userToEdit.phones.map((un: any, i: number) => (
-                        <ul className="numbers-list">
-                            <li className="numbers-list__number">
-                                <Field component="input"type="text"name={`${un.name}-${i}`}></Field>
-                                <Field key={i}name={`${un.number}-${i}`}component="input" type="text" />
-                                <button type="button" onClick={handleRemoveNumber} value={i}>
-                                    <img src={iconRemove} alt="Remove icon"></img>
-                                </button>
-                            </li>
-                        </ul>
-                    ))
-                }
+                <label htmlFor="phones">Numbers</label>
+                <FieldArray name="phones" component={renderNumberFields}>
+                </FieldArray>
             </div>
-            <div>
-                <button type="button" onClick={handleAddNumber} className="btn btn-add-number round" name="add-number">
-                    <img className="icon small icon-add" src={iconAdd} alt="Add icon"></img>
-                </button>
-                <label htmlFor="add-number">Add numbers</label>
-            </div>
+
             <div className="form-btns">
                 <button className="btn btn-cancel" type="reset" onClick={reset}>Cancel</button>
-                <button className="btn btn-save" disabled={pristine || submitting} type="submit">Save</button>
+                <button className="btn btn-save" disabled={invalid || submitting} type="submit">Save</button>
             </div>
         </form>)
 }
 
+const renderNumberFields = (props: any) => {
+    const { fields, meta:{errors} } = props
+    return (
+        <div className="numbers-list">
+            <ul>
+                {fields && fields.map((phone: any, i: number) => {
+                    return (
+
+                        <li key={i} className="numbers-list__number">
+                            <Field name={`${phone}.name`} component="input" type="text" />
+                            <Field component="input" type="text" name={`${phone}.number`} />
+                            <button type="button" onClick={() => fields.remove(i)} value={i}>
+                                <img src={iconRemove} alt="Remove icon"></img>
+                            </button>
+                        </li>
+                    )
+                })}
+                 {errors && <li className="error">{errors}</li>}
+            </ul>
+            <div>
+                <button type="button" onClick={() => fields.push()} className="btn btn-add-number round" name="add-number">
+                    <img className="icon small icon-add" src={iconAdd} alt="Add icon"></img>
+                </button>
+                <label htmlFor="add-number">Add numbers</label>
+            </div>
+        </div>
+
+    )
+}
+
 const ContactReduxForm = reduxForm({
-    form: 'contact'
+    form: 'contact',
+    validate
 })(ContactForm)
 
 export default connect(
