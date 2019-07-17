@@ -20,7 +20,8 @@ class ContactEditPage extends React.Component<any>{
 const mapStateToProps = (state: any) => {
     return {
         users: state.fetchUsers.users,
-        user: state.fetchUsers.user
+        user: state.fetchUsers.user,
+        userToEdit: state.fetchUsers.user
     }
 }
 
