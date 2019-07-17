@@ -14,7 +14,7 @@ const NameBar = (props: any) => {
         <div className="contact-name">
             <span className="contact-name__left">
                 <img className="icon icon-desktop-large"src={iconBack} onClick={onClickBack}></img>
-                {mode === "details" && <h2>{capitalize(user.first_name)} {capitalize(user.last_name)}</h2>}
+                {mode === "details" && <h2>{capitalize(user.full_name)} </h2>}
             </span>
             <span className="contact-name__right">
                 {mode === "details" &&

@@ -16,7 +16,6 @@ export const fetchUsers = () => {
             .then(data => {
                 let editedData: User = editData(data)
                 dispatch(fetchUsersSuccess(editedData))
-                console.group(editedData)
                 return editedData
             })
             .catch(error => dispatch(fetchUsersError(error)))
@@ -39,7 +38,7 @@ const editData = (data: any) => {
                     break;
                 }
                 case ("name"): {
-                    obj = Object.assign({}, obj, { first_name: r[key].first, last_name: r[key].last })
+                    obj = Object.assign({}, obj, { full_name: `${r[key].first} ${r[key].last}` })
                     break;
                 }
                 case ("picture"): {

@@ -28,7 +28,7 @@ class UserCard extends React.Component<any, UserListState, any>{
                         <img src={user.profile_photo} alt="profile photo"></img>
                     </div>
                     <div className="card__name">
-                        <p>{capitalize(user.first_name)} {capitalize(user.last_name)}</p>
+                        <p>{capitalize(user.full_name)} </p>
                     </div>
                 </div>
             </Link>
