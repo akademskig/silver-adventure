@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, reduxForm, ConfigProps, FieldArray } from 'redux-form'
 import iconAdd from "../../assets/icons/add.svg"
-import iconRemove from "../../assets/icons/remove.svg"
+import iconRemove from "../../assets/icons/remove-gray.svg"
 import { connect } from 'react-redux';
 import { addPhoneNumber } from '../../redux/actions/contactForm';
 import { render } from 'react-dom';
@@ -10,18 +10,18 @@ let ContactForm = (props: any) => {
     const { handleSubmit, submitting, reset, invalid, onCancel } = props
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="contact-form"onSubmit={handleSubmit}>
             <div className="contact-form__form-section">
-                <label htmlFor="full_name">Full Name</label>
-                <Field name="full_name" component="input" type="text" />
+                <label className="field-label" htmlFor="full_name">full name</label>
+                <Field className="form-input name"name="full_name" component="input" type="text" />
             </div>
 
             <div className="contact-form__form-section">
-                <label htmlFor="email">Email</label>
-                <Field name="email" component="input" type="email" />
+                <label className="field-label"htmlFor="email">email</label>
+                <Field className="form-input name"name="email" component="input" type="email" />
             </div>
             <div className="contact-form__form-section">
-                <label htmlFor="phones">Numbers</label>
+                <label className="field-label"htmlFor="phones">numbers</label>
                 <FieldArray name="phones" component={renderNumberFields}>
                 </FieldArray>
             </div>
@@ -36,14 +36,14 @@ let ContactForm = (props: any) => {
 const renderNumberFields = (props: any) => {
     const { fields, meta: { errors } } = props
     return (
-        <div className="numbers-list">
-            <ul>
+        <div >
+            <ul className="numbers-list">
                 {fields && fields.map((phone: any, i: number) => {
                     return (
 
                         <li key={i} className="numbers-list__number">
-                            <Field name={`${phone}.name`} component="input" type="text" />
-                            <Field component="input" type="text" name={`${phone}.number`} />
+                            <Field className="form-input number__number"component="input" type="text" name={`${phone}.number`} />
+                            <Field className="number__name"name={`${phone}.name`} component="input" type="text" />
                             <button type="button" onClick={() => fields.remove(i)} value={i}>
                                 <img src={iconRemove} alt="Remove icon"></img>
                             </button>
@@ -52,7 +52,7 @@ const renderNumberFields = (props: any) => {
                 })}
                 {errors && <li className="error">{errors}</li>}
             </ul>
-            <div>
+            <div className="add-numbers btn">
                 <button type="button" onClick={() => fields.push()} className="btn btn-add-number round" name="add-number">
                     <img className="icon small icon-add" src={iconAdd} alt="Add icon"></img>
                 </button>
