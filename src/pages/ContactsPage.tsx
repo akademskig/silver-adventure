@@ -1,11 +1,10 @@
 import React, { Fragment } from "react"
 import { ContactRoutes, ContactSubroutes } from '../routes';
 import { connect } from "react-redux";
-import { fetchUsers } from "../redux/actions/fetchUsers";
+import { fetchUsers } from "../assets/services/usersService";
 
 class ContactsPage extends React.Component<any> {
     componentDidMount() {
-        if (this.props.users.length == 0)
             this.props.dispatch(fetchUsers())
     }
     render() {
