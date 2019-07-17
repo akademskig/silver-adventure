@@ -22,12 +22,7 @@ const contactFormReducer: Reducer<any, any> = (state = initialState, action: any
                 userToEdit: action.payload ? action.payload.userToEdit: null
             }
         }
-        case UPDATE_USERS:{
-            return {
-                ...state,
-                users: action.payload.users
-            }
-        }
+      
       
 
         default: return state

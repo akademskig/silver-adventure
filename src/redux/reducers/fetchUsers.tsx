@@ -6,6 +6,7 @@ import {
 } from '../actions/fetchUsers'
 import { Reducer } from 'react';
 import { FetchUsersAction } from '../types';
+import { UPDATE_USERS } from '../actions/contactForm';
 
 const initialState = {
     users: [],
@@ -45,6 +46,12 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
                 loading: false,
                 error: action.payload ? action.payload.error : null,
                 user: action.payload ? action.payload.user : {}
+            }
+        }
+        case UPDATE_USERS: {
+            return {
+                ...state,
+                users: action.payload ? action.payload.users : []
             }
         }
 
