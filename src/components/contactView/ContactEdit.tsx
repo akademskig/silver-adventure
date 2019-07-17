@@ -14,6 +14,7 @@ const ContactEdit = (props: any) => {
     const onSubmit = (values: any) => {
         const newUsers = users.map((u: User) => values.id === u.id ? values : u)
         dispatch(saveUsers(newUsers))
+        history.goBack()
     }
     return (
         <React.Fragment>
