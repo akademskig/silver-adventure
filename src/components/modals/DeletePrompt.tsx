@@ -1,0 +1,28 @@
+import Modal from "./ModalContainer";
+import React from "react"
+import { connect } from "react-redux";
+const DeletePrompt = (props: any) => {
+    return (
+        <div className="modal-prompt delete-prompt">
+            <header className="modal-header delete-header">
+                <h3>Delete</h3>
+            </header>
+            <div className="modal-body delete-body">
+                <p>Are you sure you want to delete this contact?</p>
+                <div className="modal-btns">
+                    <button className="btn btn-cancel">Cancel</button>
+                    <button className="btn btn-delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const mapStateToProps = (state: any) => {
+    return {
+        modalVisible: state.modal.modalVisible,
+    }
+}
+
+
+export default connect(mapStateToProps)(Modal(DeletePrompt))
