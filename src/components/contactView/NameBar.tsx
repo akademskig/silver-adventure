@@ -9,12 +9,12 @@ import { toggleModal } from "../../redux/actions/modal";
 import { connect } from "react-redux";
 
 const NameBar = (props: any) => {
-    const { user, history, mode,dispatch } = props
+    const { user, history, mode, dispatch } = props
     const onClickBack = (_: React.MouseEvent) => {
         history.goBack()
     }
-    const onClickDelete = (_:React.MouseEvent)=>{
-        dispatch(toggleModal())
+    const onClickDelete = (id: number) => {
+        dispatch(toggleModal(id))
     }
     return (
         <div className="contact-name">
@@ -34,7 +34,7 @@ const NameBar = (props: any) => {
                 {mode === "edit" &&
                     <React.Fragment>
                         <span className="icon-text">Delete</span>
-                        <img className="icon icon-desktop" onClick={onClickDelete}src={iconTrash}></img>
+                        <img className="icon icon-desktop" onClick={() => onClickDelete(user.id)} src={iconTrash}></img>
                     </React.Fragment>
                 }
 

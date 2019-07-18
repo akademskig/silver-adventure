@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { TOGGLE_MODAL } from "../actions/modal";
 
-const initialState={
+const initialState = {
     modalVisible: false
 }
 const modal: Reducer<any, any> = (state = initialState, action: any) => {
@@ -9,7 +9,8 @@ const modal: Reducer<any, any> = (state = initialState, action: any) => {
         case TOGGLE_MODAL: {
             return {
                 ...state,
-                modalVisible: !state.modalVisible
+                modalVisible: !state.modalVisible,
+                userId: action.payload.userId
             }
         }
         default: return state
