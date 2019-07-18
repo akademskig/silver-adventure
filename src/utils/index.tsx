@@ -9,7 +9,10 @@ export const capitalize = (string: string) => {
         ).join("")
     }).join(" ")
 }
+
 export const filterUsers = (users: Array<User>, value: any) => {
+    if (!users || users.length === 0)
+        return
     if (value.match(/[!#$%^&*(),?":{}|<>+]/g)) {
         return users
     }
