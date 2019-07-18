@@ -13,6 +13,7 @@
 @import "./components/modals/modals.scss";
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 * {
     box-sizing: border-box;
     text-decoration: none;
@@ -37,4 +38,5 @@ code {
 .app__content {
     margin: auto;
     width: 90vw;
+    min-width: 250px;
 }
