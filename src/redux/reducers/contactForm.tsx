@@ -1,6 +1,6 @@
 
 import { Reducer } from 'react';
-import { ADD_PHONE_NUMBER, ADD_INITIAL_VALUES, UPDATE_USERS } from '../actions/contactForm';
+import { ADD_PHONE_NUMBER, ADD_INITIAL_VALUES } from '../actions/contactForm';
 
 const initialState = {
     user: null,

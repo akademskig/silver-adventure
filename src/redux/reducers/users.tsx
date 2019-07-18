@@ -3,11 +3,11 @@ import {
     FETCH_USERS_SUCCESS,
     FETCH_USERS_ERROR,
     FETCH_USER,
-    SEARCH_USERS
+    SEARCH_USERS,
+    UPDATE_USERS
 } from '../actions/users'
 import { Reducer } from 'react';
 import { FetchUsersAction } from '../types';
-import { UPDATE_USERS } from '../actions/contactForm';
 
 const initialState = {
     users: [],
@@ -64,7 +64,7 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
                 filtered_users: action.payload ? action.payload.filtered_users : [],
             }
         }
-        
+
         default: return state
     }
 }
