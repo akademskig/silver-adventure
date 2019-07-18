@@ -1,11 +1,10 @@
 import React from 'react'
-import { Field, reduxForm, ConfigProps, FieldArray } from 'redux-form'
+import { Field, reduxForm, FieldArray } from 'redux-form'
 import iconAdd from "../../assets/icons/add.svg"
 import iconRemove from "../../assets/icons/remove-gray.svg"
 import { connect } from 'react-redux';
-import { addPhoneNumber } from '../../redux/actions/contactForm';
-import { render } from 'react-dom';
 import validate from './contactFormValidate';
+
 let ContactForm = (props: any) => {
     const { handleSubmit, submitting, reset, invalid, onCancel } = props
 

@@ -64,7 +64,7 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: FetchUser
                 filtered_users: action.payload ? action.payload.filtered_users : [],
             }
         }
-
+        
         default: return state
     }
 }
