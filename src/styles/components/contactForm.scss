@@ -19,6 +19,11 @@
             color: $theme-color-1;
             font-weight: bold;
             margin-bottom: 1.37em;
+            display: flex;
+
+            img {
+                margin-right: 0.5em;
+            }
         }
 
         input {

@@ -4,23 +4,32 @@ import iconAdd from "../../assets/icons/add.svg"
 import iconRemove from "../../assets/icons/remove-gray.svg"
 import { connect } from 'react-redux';
 import validate from './contactFormValidate';
-
+import iconPerson from "../../assets/icons/person.svg"
+import iconPhone from "../../assets/icons/phone.svg"
+import iconEmail from "../../assets/icons/email.svg"
 let ContactForm = (props: any) => {
     const { handleSubmit, submitting, reset, invalid, onCancel } = props
 
     return (
-        <form className="contact-form"onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmit}>
             <div className="contact-form__form-section">
-                <label className="field-label" htmlFor="full_name">full name</label>
-                <Field className="form-input name"name="full_name" component="input" type="text" />
-            </div>
-
-            <div className="contact-form__form-section">
-                <label className="field-label"htmlFor="email">email</label>
-                <Field className="form-input name"name="email" component="input" type="email" />
+                <label className="field-label" htmlFor="full_name">
+                    <img src={iconPerson} alt="Person icon"></img>
+                    full name
+                    </label>
+                <Field className="form-input name" name="full_name" component="input" type="text" />
             </div>
             <div className="contact-form__form-section">
-                <label className="field-label"htmlFor="phones">numbers</label>
+                <label className="field-label" htmlFor="email">
+                    <img src={iconEmail} alt="Email icon"></img>
+                    email
+                    </label>
+                <Field className="form-input name" name="email" component="input" type="email" />
+            </div>
+            <div className="contact-form__form-section">
+                <label className="field-label" htmlFor="phones">
+                    <img src={iconPhone} alt="Phone icon"></img>
+                    numbers</label>
                 <FieldArray name="phones" component={renderNumberFields}>
                 </FieldArray>
             </div>
@@ -41,8 +50,8 @@ const renderNumberFields = (props: any) => {
                     return (
 
                         <li key={i} className="numbers-list__number">
-                            <Field className="form-input number__number"component="input" type="text" name={`${phone}.number`} />
-                            <Field className="number__name"name={`${phone}.name`} component="input" type="text" />
+                            <Field className="form-input number__number" component="input" type="text" name={`${phone}.number`} />
+                            <Field className="number__name" name={`${phone}.name`} component="input" type="text" />
                             <button type="button" onClick={() => fields.remove(i)} value={i}>
                                 <img src={iconRemove} alt="Remove icon"></img>
                             </button>
