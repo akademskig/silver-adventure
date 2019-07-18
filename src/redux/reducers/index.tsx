@@ -1,8 +1,6 @@
-import fetchUsers from "./fetchUsers"
-import searchUsers from "./searchUsers"
-
-
+import users from "./users"
+import contactFormReducer from "./contactForm";
 export {
-    fetchUsers,
-    searchUsers
+    users,
+    contactFormReducer
 }

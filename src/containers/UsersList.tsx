@@ -27,7 +27,7 @@ class UsersList extends React.Component<any, UserListState, any> {
 
 const mapStateToProps = (state: any) => {
     return {
-        filtered_users:state.fetchUsers.filtered_users,
+        filtered_users:state.users.filtered_users,
     }
 }
 

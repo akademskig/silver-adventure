@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { withRouter } from "react-router";
 import ContactEdit from "../components/contactView/ContactEdit";
 import { User } from "../types/user";
-import { fetchUser } from "../redux/actions/fetchUsers";
+import { fetchUser } from "../redux/actions/users";
 
 class ContactEditPage extends React.Component<any>{
     render() {
@@ -19,9 +19,9 @@ class ContactEditPage extends React.Component<any>{
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.fetchUsers.users,
-        user: state.fetchUsers.user,
-        userToEdit: state.fetchUsers.user
+        users: state.users.users,
+        user: state.users.user,
+        userToEdit: state.users.user
     }
 }
 

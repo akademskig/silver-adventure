@@ -3,7 +3,7 @@ import searchIcon from "../assets/icons/search.svg"
 import { connect } from "react-redux"
 import { UserListState } from "../redux/types";
 import { filterUsers } from "../utils";
-import { searchUsers } from "../redux/actions/searchUsers";
+import { searchUsers } from "../redux/actions/users";
 class SearchBar extends React.Component<any, UserListState, any>{
     handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const users = filterUsers(this.props.users, e.target.value)
@@ -28,16 +28,10 @@ class SearchBar extends React.Component<any, UserListState, any>{
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.users,
-        filtered_users: state.filtered_users,
-    }
-}
-const mapDispatchToProps = (dispatch: any, ownProps: any) => {
-    return {
-        dispatch: dispatch,
+        users: state.users.users,
     }
 }
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+export default connect(mapStateToProps)(SearchBar)

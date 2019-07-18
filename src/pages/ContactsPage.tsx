@@ -5,7 +5,7 @@ import { fetchUsers } from "../assets/services/usersService";
 
 class ContactsPage extends React.Component<any> {
     componentDidMount() {
-            this.props.dispatch(fetchUsers())
+        this.props.dispatch(fetchUsers())
     }
     render() {
         return (
@@ -19,10 +19,10 @@ class ContactsPage extends React.Component<any> {
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.fetchUsers.users,
-        filtered_users: state.fetchUsers.filtered_users,
-        loading: state.fetchUsers.loading,
-        error: state.fetchUsers.error
+        users: state.users.users,
+        filtered_users: state.users.filtered_users,
+        loading: state.users.loading,
+        error: state.users.error
     }
 }
 

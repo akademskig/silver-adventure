@@ -1,8 +1,7 @@
 import { Dispatch } from "react";
 import { FetchUsersAction } from "../../redux/types";
-import { fetchUsersBegin, fetchUsersSuccess, fetchUsersError } from "../../redux/actions/fetchUsers";
+import { fetchUsersBegin, fetchUsersSuccess, fetchUsersError } from "../../redux/actions/users";
 import { User } from "../../types/user";
-import { element } from "prop-types";
 import { updateUsers } from "../../redux/actions/contactForm";
 
 const USERS_API = "https://randomuser.me/api/?results=22&nat=gb&inc=name,gender,picture,phone,cell,email&noinfo"
