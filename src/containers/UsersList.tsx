@@ -2,6 +2,7 @@ import React from "react"
 import { UserListState } from "../redux/types";
 import { connect } from "react-redux";
 import UserCard from "../components/UserCard"
+import EmptyUserCard from "../components/EmptyUserCard";
 
 class UsersList extends React.Component<any, UserListState, any> {
 
@@ -17,6 +18,7 @@ class UsersList extends React.Component<any, UserListState, any> {
 
         return (
             <div className="card-list">
+                <EmptyUserCard></EmptyUserCard>
                 {filtered_users && filtered_users.map((user: any) =>
                     <UserCard key={user.id} user={user}></UserCard>
                 )}
