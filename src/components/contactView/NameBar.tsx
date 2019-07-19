@@ -26,7 +26,7 @@ const NameBar = (props: any) => {
                 {mode === "details" &&
                     <React.Fragment>
                         <img className="icon icon-desktop" src={iconHearthEmpty}></img>
-                        <Link to={`/contacts/${user.id}/edit`}>
+                        <Link to={`/contacts/edit/${user.id}`}>
                             <img className="icon icon-desktop" src={iconEdit}></img>
                         </Link>
                     </React.Fragment>

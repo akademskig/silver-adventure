@@ -11,14 +11,14 @@ class UserCard extends React.Component<any, UserListState, any>{
     render() {
         const { user } = this.props
         return (
-            <Link to={`/contacts/${user.id}`}>
+            <Link to={`/contacts/view/${user.id}`}>
                 <div className="card">
                     <div className="card__icons">
                         <span>
                             <img src={icoHearthEmpty}></img>
                         </span>
                         <span className="icons__right">
-                            <Link to={`/contacts/${user.id}/edit`}>
+                            <Link to={`/contacts/edit/${user.id}`}>
                                 <img src={icoEdit}></img>
                             </Link>
                             <img src={icoDelete}></img>

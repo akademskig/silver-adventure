@@ -8,9 +8,11 @@ import { fetchUser } from "../redux/actions/users";
 
 class ContactDetailsPage extends React.Component<any> {
     render() {
-        const { users, dispatch, match, user } = this.props
+        const { users, dispatch, match, user,history } = this.props
         if (users.length > 0) {
             const user = users.find((u: User) => u.id == match.params.id)
+            if(!user)
+                history.push("/contacts/all_contacts")
             dispatch(fetchUser(user))
         }
 

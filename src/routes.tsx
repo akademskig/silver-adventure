@@ -13,6 +13,7 @@ export default class MainRoutes extends React.Component {
             <Switch>
                 <Route exact path="/" render={() => <Redirect to="/contacts/all_contacts"></Redirect>}></Route>
                 <Route path="/contacts" component={ContactsPage}></Route>
+                <Route render={() => <Redirect to="/contacts/all_contacts"></Redirect>}></Route>
             </Switch>
         )
     }
@@ -34,8 +35,9 @@ export class ContactSubroutes extends React.Component {
     render() {
         return (
             <Switch>
-                <Route path={`/contacts/:id/edit`} render={() => <ContactEditPage {...this.props}></ContactEditPage>} />
-                <Route path={`/contacts/:id`} render={() => <ContactDetailsPage {...this.props}></ContactDetailsPage>} />
+                <Route exact path={`/contacts/edit/:id`} render={() => <ContactEditPage {...this.props}></ContactEditPage>} />
+                <Route path={`/contacts/view/:id`} render={() => <ContactDetailsPage {...this.props}></ContactDetailsPage>} />
+                <Route render={() => <Redirect to="/contacts/all_contacts"></Redirect>}></Route>
             </Switch>
         )
     }
