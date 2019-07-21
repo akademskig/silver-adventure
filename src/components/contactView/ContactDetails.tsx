@@ -15,11 +15,11 @@ const ContactDetails = (props: any) => {
             <IconsBarMobile {...history}></IconsBarMobile>
             <div className="contact-details">
                 <div className="profile-mobile">
-                    <ProfilePhoto {...props}></ProfilePhoto>
+                    <ProfilePhoto imgType="view"{...props}></ProfilePhoto>
                 </div>
-                <NameBarMobile {...props}></NameBarMobile>
+                <NameBarMobile imgType="view"{...props}></NameBarMobile>
                 <div className="contact-details__info">
-                    <NameBar mode="details"{...props}></NameBar>
+                    <NameBar mode="view"{...props}></NameBar>
                     <div className="contact-info">
                         <div className="contact-info__email">
                             <div className="email__label label">

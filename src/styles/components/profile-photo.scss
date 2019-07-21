@@ -33,16 +33,13 @@
 
         }
     }
-
+   
     .img-cover {
         width: 180px;
         height: 180px;
         border-radius: 50%;
         border: 3px solid $theme-color-gray;
         background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .img-cover {
         position: absolute;
 
         img {
@@ -50,7 +47,11 @@
             left: 42%;
             top: 44%
         }
-
+    }
+    .img-add-new{
+        position: relative;
+        background-color: rgba(#2DA1AD , 0.4);
+        border: 3px solid rgba($theme-color-gray,0.3);
     }
 }
 
@@ -59,7 +60,6 @@
         margin-right: 3%;
         border-radius: 50%;
 
-
         .img__desktop {
             img {
                 width: 90px;
@@ -67,17 +67,12 @@
         }
 
         .img-cover {
-            position: absolute;
             width: 90px;
             height: 90px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.4);
-
             img {
                 left: 36%;
                 top: 38%
             }
-
         }
     }
 }
@@ -91,7 +86,6 @@
                 display: none;
             }
         }
-
 
         .img__mobile--edit {
             margin-top: 23px;
@@ -114,15 +108,11 @@
             margin-top: 23px;
             width: 150px;
             height: 150px;
-            position: absolute;
 
             img {
                 left: 40%;
                 top: 42%
             }
-
         }
-
     }
-
 }

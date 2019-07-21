@@ -8,10 +8,9 @@ const NameBarMobile = (props: any) => {
 
     return (
         <div className="contact-name--mobile">
-
             <ProfilePhoto visible user={user} imgType={imgType} ></ProfilePhoto>
             <span className="contact-name__left">
-                <h2>{capitalize(user.first_name)} {capitalize(user.last_name)}</h2>
+                <h2>{capitalize(user.full_name)} </h2>
             </span>
 
         </div>
