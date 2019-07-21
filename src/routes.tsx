@@ -6,6 +6,7 @@ import myFavoritesPage from './pages/myFavoritesPage';
 import ContactsPage from './pages/ContactsPage';
 import ContactEditPage from './pages/ContactEditPage';
 import ContactDetailsPage from './pages/ContactDetailsPage';
+import ContactNewPage from './pages/ContactNewPage';
 
 export default class MainRoutes extends React.Component {
     render() {
@@ -37,6 +38,7 @@ export class ContactSubroutes extends React.Component {
             <Switch>
                 <Route exact path={`/contacts/edit/:id`} render={() => <ContactEditPage {...this.props}></ContactEditPage>} />
                 <Route path={`/contacts/view/:id`} render={() => <ContactDetailsPage {...this.props}></ContactDetailsPage>} />
+                <Route path={`/contacts/new`} render={() => <ContactNewPage {...this.props}></ContactNewPage>} />
                 <Route render={() => <Redirect to="/contacts/all_contacts"></Redirect>}></Route>
             </Switch>
         )
