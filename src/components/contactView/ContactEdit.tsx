@@ -6,7 +6,7 @@ import ProfilePhoto from "./ProfilePhoto";
 import ContactForm from "./ContactForm";
 import { addInitialValues } from "../../redux/actions/contactForm";
 import { User } from "../../types/user";
-import { saveUsers } from "../../assets/services/usersService";
+import { saveUsers } from "../../services/usersService";
 
 const ContactEdit = (props: any) => {
     const { user, users, history, dispatch } = props

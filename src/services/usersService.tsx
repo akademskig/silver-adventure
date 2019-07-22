@@ -1,7 +1,7 @@
 import { Dispatch } from "react";
-import { FetchUsersAction } from "../../redux/types";
-import { fetchUsersBegin, fetchUsersSuccess, fetchUsersError, updateUsers } from "../../redux/actions/users";
-import { User } from "../../types/user";
+import { FetchUsersAction } from "../redux/types";
+import { fetchUsersBegin, fetchUsersSuccess, fetchUsersError, updateUsers } from "../redux/actions/users";
+import { User } from "../types/user";
 
 const USERS_API = "https://randomuser.me/api/?results=22&nat=gb&inc=name,gender,picture,phone,cell,email&noinfo"
 
@@ -74,9 +74,19 @@ const getUsers = () => {
         return JSON.parse(usersList)
     return []
 }
-const deleteUser = (id: number) => {
+const deleteUser = (id: string) => {
     const usersList = getUsers()
     const newUsersList = usersList.filter((u: User) => u.id !== id)
+    return (dispatch: any) => {
+        dispatch(saveUsers(newUsersList))
+    }
+}
+
+const addNewUser = (newUser: User) => {
+    const user = new User(newUser)
+    console.log(user)
+    const usersList= getUsers()
+    const newUsersList = usersList.concat(user)
     return (dispatch: any) => {
         dispatch(saveUsers(newUsersList))
     }
@@ -86,5 +96,6 @@ export {
     fetchUsers,
     saveUsers,
     getUsers,
-    deleteUser
+    deleteUser,
+    addNewUser
 }

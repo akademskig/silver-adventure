@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { ContactRoutes, ContactSubroutes } from '../routes';
 import { connect } from "react-redux";
-import { fetchUsers } from "../assets/services/usersService";
+import { fetchUsers } from "../services/usersService";
 
 class ContactsPage extends React.Component<any> {
     componentDidMount() {
