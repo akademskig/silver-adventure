@@ -1,6 +1,6 @@
-import React, { FunctionComponent, ReactChild, ReactComponentElement, ComponentType, ReactNode } from "react"
+import React from "react"
 import { toggleModal } from "../../redux/actions/modal";
-import { deleteUser } from "../../assets/services/usersService";
+import { deleteUser } from "../../services/usersService";
 
 const Modal = (PromptComponent: any) => {
     return class ModalContainer extends React.Component<any> {
@@ -9,8 +9,7 @@ const Modal = (PromptComponent: any) => {
             this.props.dispatch(toggleModal())
         }
         onDelete = (userId: string) => {
-            const id = parseInt(userId)
-            this.props.dispatch(deleteUser(id))
+            this.props.dispatch(deleteUser(userId))
             this.props.history.push("/contacts")
             this.props.dispatch(toggleModal())
         }
