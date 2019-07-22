@@ -21,7 +21,6 @@ const mapStateToProps = (state: any) => {
     return {
         users: state.users.users,
         user: state.users.user,
-        userToEdit: state.users.user
     }
 }
 

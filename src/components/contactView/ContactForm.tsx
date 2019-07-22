@@ -80,7 +80,6 @@ export default connect(
     (state: any) => {
         return ({
             initialValues: state.contactFormReducer.userToEdit,
-            userToEdit: state.contactFormReducer.userToEdit
         })
     }
 )(ContactReduxForm)
