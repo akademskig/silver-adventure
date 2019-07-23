@@ -51,3 +51,114 @@
         }
     }
 }
+
+
+.card.mobile-card {
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+
+    .mobile-card__left {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    &:hover {
+        cursor: pointer;
+        border-color: $theme-color-1;
+
+    }
+
+    .icons__right {
+        width: 35%;
+        min-width: 100px;
+        display: flex;
+        justify-content: space-between;
+
+        a,
+        span {
+            display: flex;
+        }
+    }
+
+
+    .card__img {
+        text-align: center;
+        display: flex;
+        margin-top: 0;
+        margin-right: 2%;
+
+        img {
+            width: 2.5em;
+            border-radius: 50%;
+            border: solid 3px #E0E0E0;
+        }
+    }
+
+    .card__name {
+        text-align: center;
+        margin-right: 2%;
+
+        p {
+            color: #BBC4C3;
+            font-weight: bold;
+            font-size: 0.875em;
+            margin: 5px
+        }
+    }
+}
+
+
+.card.empty-card {
+    min-width: 250px;
+    border-radius: 4px;
+    padding: 15px 17px 23px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: dashed 1px rgba(187, 196, 195, 0.5);
+
+    .empty-card__content {
+        p {
+            margin: 0.5em 0 0 0;
+        }
+
+        text-align: center;
+        color: rgba($theme-color-1, 0.5)
+    }
+
+    &:hover {
+        cursor: pointer;
+        border-color: $theme-color-1;
+    }
+}
+
+.card.empty-card-mobile {
+    min-width: 250px;
+    border-radius: 4px;
+    padding: 10px;
+    border: dashed 1px rgba(187, 196, 195, 0.5);
+
+    .empty-card__content {
+        p {
+            margin: auto;
+            font-size: 0.875em;
+        }
+
+        img {
+            width: 1em;
+            margin: auto 1.1em auto 0.9em;
+        }
+
+        display:flex;
+        color: rgba($theme-color-1, 0.5)
+    }
+
+    &:hover {
+        cursor: pointer;
+        border-color: $theme-color-1;
+    }
+}

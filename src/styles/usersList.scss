@@ -18,5 +18,18 @@
     @include mobile {
         grid-template-columns: 1fr;
         width: 100%;
+        display: none;
+    }
+}
+
+.mobile-list {
+    display: none;
+
+    @include mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 1.5vw;
+
     }
 }
