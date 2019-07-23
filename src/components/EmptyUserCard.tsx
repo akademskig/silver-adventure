@@ -1,6 +1,5 @@
 import React from "react";
 import { UserListState } from "../redux/types";
-import icoEdit from "../assets/icons/icon-edit.svg"
 import { Link } from "react-router-dom";
 import addIcon from "../assets/icons/add-opaque.svg"
 class EmptyUserCard extends React.Component<any, UserListState, any>{

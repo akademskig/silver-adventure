@@ -1,7 +1,6 @@
 import React from "react";
 import { UserListState } from "../redux/types";
 import { capitalize } from "../utils"
-import icoHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
 import icoEdit from "../assets/icons/icon-edit.svg"
 import noUserImg from "../assets/imgs/empty-user.jpeg"
 import Img from "react-image"

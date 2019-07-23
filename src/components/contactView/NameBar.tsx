@@ -1,4 +1,4 @@
-import React, { Dispatch } from "react"
+import React from "react"
 import { capitalize } from "../../utils";
 import iconBack from "../../assets/icons/arrow-back.svg"
 import iconHearthEmpty from "../../assets/icons/icon-hearth-empty.svg"

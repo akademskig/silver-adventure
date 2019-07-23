@@ -1,6 +1,5 @@
 
 import React from "react"
-import { toggleModal } from "../redux/actions/modal";
 import { connect } from "react-redux";
 import iconHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
 import iconHeartFull from "../assets/icons/icon-hearth-full.svg"
