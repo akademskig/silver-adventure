@@ -83,9 +83,11 @@ const deleteUser = (id: string) => {
 }
 
 const addNewUser = (newUser: User) => {
-    const user = new User(newUser)
-    console.log(user)
-    const usersList= getUsers()
+    const usersList = getUsers()
+    const maxId = usersList.map((u: User) => u.id)
+        .reduce((acc: number, curr: number) => Math.max(acc, curr), -Infinity)
+    const user = new User(Object.assign({}, newUser, { id: maxId + 1 }))
+
     const newUsersList = usersList.concat(user)
     return (dispatch: any) => {
         dispatch(saveUsers(newUsersList))
