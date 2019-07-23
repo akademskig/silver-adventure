@@ -1,49 +1,51 @@
-.modal-container{
-    position:fixed;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    background-color:rgba(#000000, 0.4);
-    display:flex;
+.modal-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(#000000, 0.4);
+    display: flex;
 
-    .modal-prompt{
-        max-width:480px;
-        width:80%;
-        margin:auto;
+    .modal-prompt {
+        max-width: 480px;
+        width: 80%;
+        margin: auto;
         background-color: white;
         border-radius: 4px;
         box-shadow: 0 0 14px 0 rgba(99, 109, 255, 0.27);
 
-        .modal-header{
+        .modal-header {
             border-bottom: 2px solid $theme-color-gray;
-            h3{
-                margin:1em;
-                font-size:1em;
+
+            h3 {
+                margin: 1em;
+                font-size: 1em;
                 color: $theme-color-gray;
-                font-weight:700;
+                font-weight: 700;
             }
         }
 
-        .modal-body{
-            p{
-                margin:2em;
-                text-align:center;
+        .modal-body {
+            p {
+                margin: 2em;
+                text-align: center;
                 color: $theme-color-gray;
             }
-           
+
         }
+
         .modal-btns {
             padding: 1.85em;
-            padding-top:1.35em;
+            padding-top: 1.35em;
             display: flex;
             justify-content: space-between;
 
-            @include xs-mobile-only{
+            @include xs-mobile-only {
                 flex-direction: column;
-                align-items:center;
+                align-items: center;
             }
-    
+
             .btn {
                 border-radius: 30px;
                 margin: 0.5em 0;
@@ -53,12 +55,12 @@
                 font-family: "Lato";
                 border: none;
                 color: white;
-    
+
                 &.btn-cancel {
                     background-color: $theme-color-gray;
-    
+
                 }
-    
+
                 &.btn-delete {
                     background-color: $theme-color-1;
                 }
