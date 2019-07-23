@@ -4,6 +4,8 @@ import { capitalize } from "../utils"
 import icoHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
 import icoEdit from "../assets/icons/icon-edit.svg"
 import icoDelete from "../assets/icons/icon-delete.svg"
+import noUserImg from "../assets/imgs/empty-user.jpeg"
+import Img from "react-image"
 import { Link } from "react-router-dom";
 
 class UserCard extends React.Component<any, UserListState, any>{
@@ -25,7 +27,7 @@ class UserCard extends React.Component<any, UserListState, any>{
                         </span>
                     </div>
                     <div className="card__img">
-                        <img src={user.profile_photo} alt="profile photo"></img>
+                        <Img src={[user.profile_photo, noUserImg]} alt="profile photo"></Img>
                     </div>
                     <div className="card__name">
                         <p>{capitalize(user.full_name)} </p>
