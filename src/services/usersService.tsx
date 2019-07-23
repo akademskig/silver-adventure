@@ -82,6 +82,22 @@ const deleteUser = (id: string) => {
     }
 }
 
+const getUserById = (id: string) => {
+    return getUsers().find((u: User) => u.id === id)
+}
+const toggleFavorite = (id: string) => {
+    const user = getUserById(id)
+    return (dispatch: any) => {
+        dispatch(updateUser(Object.assign({}, user, { favorite: !user.favorite })))
+    }
+}
+
+const updateUser = (user: User) => {
+    return (dispatch: any) => {
+        dispatch(saveUsers(getUsers().map((u: User) => user.id === u.id ? user : u)))
+    }
+}
+
 const addNewUser = (newUser: User) => {
     const usersList = getUsers()
     const maxId = usersList.map((u: User) => u.id)
@@ -99,5 +115,7 @@ export {
     saveUsers,
     getUsers,
     deleteUser,
-    addNewUser
+    addNewUser,
+    getUserById,
+    toggleFavorite
 }

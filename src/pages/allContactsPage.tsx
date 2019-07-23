@@ -10,7 +10,7 @@ export default class allContactsPage extends React.Component {
             <React.Fragment>
                 <Navigation></Navigation>
                 <SearchBar></SearchBar>
-                <UsersList></UsersList>
+                <UsersList page="allContacts"></UsersList>
             </React.Fragment>
         )
     }

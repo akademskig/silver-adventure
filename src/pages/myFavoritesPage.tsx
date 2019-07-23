@@ -8,7 +8,7 @@ export default class myFavoritesPage extends React.Component {
             <React.Fragment>
                 <Navigation></Navigation>
                 <SearchBar></SearchBar>
-                <UsersList></UsersList>
+                <UsersList page="myFavorites"></UsersList>
             </React.Fragment>
         )
     }

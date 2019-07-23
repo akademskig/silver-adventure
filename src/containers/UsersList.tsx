@@ -7,7 +7,7 @@ import EmptyUserCard from "../components/EmptyUserCard";
 class UsersList extends React.Component<any, UserListState, any> {
 
     render() {
-        const { error, loading,  filtered_users } = this.props;
+        const { error, loading, filtered_users, page } = this.props;
         if (error) {
             return <div>Error! {error.message}</div>;
         }
@@ -15,11 +15,14 @@ class UsersList extends React.Component<any, UserListState, any> {
         if (loading) {
             return <div>Loading...</div>;
         }
-
         return (
             <div className="card-list">
                 <EmptyUserCard></EmptyUserCard>
-                {filtered_users && filtered_users.map((user: any) =>
+                {page === "myFavorites" && filtered_users && filtered_users.map((user: any) =>
+                    user.favorite &&
+                    <UserCard key={user.id} user={user}></UserCard>
+                )}
+                {page === "allContacts" && filtered_users && filtered_users.map((user: any) =>
                     <UserCard key={user.id} user={user}></UserCard>
                 )}
             </div>
@@ -29,7 +32,7 @@ class UsersList extends React.Component<any, UserListState, any> {
 
 const mapStateToProps = (state: any) => {
     return {
-        filtered_users:state.users.filtered_users,
+        filtered_users: state.users.filtered_users,
     }
 }
 

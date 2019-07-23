@@ -7,6 +7,7 @@ import noUserImg from "../assets/imgs/empty-user.jpeg"
 import Img from "react-image"
 import { Link } from "react-router-dom";
 import IconDelete from "./IconDelete";
+import IconHearth from "./IconHearth";
 
 class UserCard extends React.Component<any, UserListState, any>{
 
@@ -16,7 +17,7 @@ class UserCard extends React.Component<any, UserListState, any>{
             <div className="card">
                 <div className="card__icons">
                     <span>
-                        <img src={icoHearthEmpty}></img>
+                      <IconHearth user={user}></IconHearth>
                     </span>
                     <span className="icons__right">
                         <Link to={`/contacts/edit/${user.id}`}>
