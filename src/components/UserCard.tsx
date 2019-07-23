@@ -3,39 +3,37 @@ import { UserListState } from "../redux/types";
 import { capitalize } from "../utils"
 import icoHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
 import icoEdit from "../assets/icons/icon-edit.svg"
-import iconTrash from "../assets/icons/icon-delete.svg"
 import noUserImg from "../assets/imgs/empty-user.jpeg"
 import Img from "react-image"
 import { Link } from "react-router-dom";
-import { toggleModal } from "../redux/actions/modal";
-import  IconDelete  from "./IconDelete";
+import IconDelete from "./IconDelete";
 
 class UserCard extends React.Component<any, UserListState, any>{
 
     render() {
         const { user } = this.props
         return (
-            <Link to={`/contacts/view/${user.id}`}>
-                <div className="card">
-                    <div className="card__icons">
-                        <span>
-                            <img src={icoHearthEmpty}></img>
-                        </span>
-                        <span className="icons__right">
-                            <Link to={`/contacts/edit/${user.id}`}>
-                                <img src={icoEdit}></img>
-                            </Link>
-                           <IconDelete id={user.id}></IconDelete>
-                        </span>
-                    </div>
+            <div className="card">
+                <div className="card__icons">
+                    <span>
+                        <img src={icoHearthEmpty}></img>
+                    </span>
+                    <span className="icons__right">
+                        <Link to={`/contacts/edit/${user.id}`}>
+                            <img src={icoEdit}></img>
+                        </Link>
+                        <IconDelete id={user.id}></IconDelete>
+                    </span>
+                </div>
+                <Link to={`/contacts/view/${user.id}`}>
                     <div className="card__img">
                         <Img src={[user.profile_photo, noUserImg]} alt="profile photo"></Img>
                     </div>
                     <div className="card__name">
                         <p>{capitalize(user.full_name)} </p>
                     </div>
-                </div>
-            </Link>
+                </Link>
+            </div>
         )
     }
 }
