@@ -1,3 +1,5 @@
+
+import lodash from "lodash"
 export class User {
     id: string | null = null
     full_name = ""
@@ -8,14 +10,12 @@ export class User {
         number: ""
     }]
     profile_photo = ""
-
+    private _genders = ['men', 'women', 'lego']
     constructor(user?: any) {
         if (!user)
             return
         if (user.id)
             this.id = user.id
-        else
-            this.id = Math.random().toString(36).substr(2, 16);
         if (user.full_name)
             this.full_name = user.full_name
         if (user.email)
@@ -24,5 +24,7 @@ export class User {
             this.phones = user.phones
         if (user.profile_photo)
             this.profile_photo = user.profile_photo
+        else
+            this.profile_photo = `https://randomuser.me/api/portraits/${lodash.sample(this._genders)}/${this.id}.jpg`
     }
 }
