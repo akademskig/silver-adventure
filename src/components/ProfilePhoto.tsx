@@ -1,8 +1,8 @@
 import React from "react"
-import removeIcon from "../../assets/icons/remove.svg"
-import uploadIcon from "../../assets/icons/upload.svg"
-import noUserImg from "../../assets/imgs/empty-user.jpeg"
-import { User } from "../../types/user";
+import removeIcon from "../assets/icons/remove.svg"
+import uploadIcon from "../assets/icons/upload.svg"
+import noUserImg from "../assets/imgs/empty-user.jpeg"
+import { User } from "../types/user";
 import { ViewMode } from "./types";
 import Img from "react-image"
 

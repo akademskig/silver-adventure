@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from "react-redux"
 import { withRouter } from "react-router";
-import ContactDetails from "../components/contactView/ContactDetails";
+import ContactDetails from "../containers/ContactDetails";
 import { User } from "../types/user";
 import { fetchUser } from "../redux/actions/users";
 

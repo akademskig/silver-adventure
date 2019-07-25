@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import allContactsPage from './pages/allContactsPage';
 import myFavoritesPage from './pages/myFavoritesPage';
-import ContactsPage from './pages/ContactsPage';
+import ContactsPage from './containers/Contacts';
 import ContactEditPage from './pages/ContactEditPage';
 import ContactDetailsPage from './pages/ContactDetailsPage';
 import ContactNewPage from './pages/ContactNewPage';

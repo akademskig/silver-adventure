@@ -1,12 +1,12 @@
 import { History } from "history";
 import React from "react";
-import iconEmail from "../../assets/icons/email.svg";
-import iconPhone from "../../assets/icons/phone.svg";
-import IconsBarMobile from "./IconsBarMobile";
-import NameBar from "./NameBar";
-import NameBarMobile from "./NameBarMobile";
-import ProfilePhoto from "./ProfilePhoto";
-import { User } from "../../types/user";
+import iconEmail from "../assets/icons/email.svg";
+import iconPhone from "../assets/icons/phone.svg";
+import { User } from "../types/user";
+import IconsBarMobile from "../components/IconsBarMobile";
+import NameBarMobile from "../components/NameBarMobile";
+import NameBar from "../components/NameBar";
+import ProfilePhoto from "../components/ProfilePhoto";
 
 const ContactDetails = (props: any) => {
     const { user, history }: { user: User, history: History } = props

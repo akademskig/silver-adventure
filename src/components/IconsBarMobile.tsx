@@ -1,9 +1,9 @@
 
 import React from "react"
 import { History } from "history";
-import iconBack from "../../assets/icons/arrow-back.svg"
-import iconHearthEmpty from "../../assets/icons/icon-hearth-empty.svg"
-import iconEdit from "../../assets/icons/icon-edit.svg"
+import iconBack from "../assets/icons/arrow-back.svg"
+import iconHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
+import iconEdit from "../assets/icons/icon-edit.svg"
 
 const IconsBarMobile = (history: History) => {
     const onClickBack = (_: React.MouseEvent) => {

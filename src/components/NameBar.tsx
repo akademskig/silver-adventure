@@ -1,11 +1,11 @@
 import React from "react"
-import { capitalize } from "../../utils";
-import iconBack from "../../assets/icons/arrow-back.svg"
-import iconHearthEmpty from "../../assets/icons/icon-hearth-empty.svg"
-import iconEdit from "../../assets/icons/icon-edit.svg"
+import { capitalize } from "../utils";
+import iconBack from "../assets/icons/arrow-back.svg"
+import iconHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
+import iconEdit from "../assets/icons/icon-edit.svg"
 import { Link } from "react-router-dom";
 import { ViewMode } from "./types";
-import IconDelete from "../IconDelete";
+import IconDelete from "./IconDelete";
 
 const NameBar = (props: any) => {
     const { user, history, mode } = props

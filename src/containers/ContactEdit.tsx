@@ -1,11 +1,11 @@
 import React from "react";
-import IconsBarMobile from "./IconsBarMobile";
-import NameBar from "./NameBar";
-import ProfilePhoto from "./ProfilePhoto";
-import ContactForm from "./ContactForm";
-import { addInitialValues } from "../../redux/actions/contactForm";
-import { User } from "../../types/user";
-import { saveUsers } from "../../services/usersService";
+import ContactForm from "../components/contactForm/ContactForm";
+import { addInitialValues } from "../redux/actions/contactForm";
+import { User } from "../types/user";
+import { saveUsers } from "../services/usersService";
+import IconsBarMobile from "../components/IconsBarMobile";
+import ProfilePhoto from "../components/ProfilePhoto";
+import NameBar from "../components/NameBar";
 
 const ContactEdit = (props: any) => {
     const { user, users, history, dispatch } = props

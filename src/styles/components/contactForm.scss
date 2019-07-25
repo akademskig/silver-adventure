@@ -58,7 +58,6 @@
         }
 
        span.form-input {
-
             &.number__name {
                 width: 30%;
                 min-width:120px;
@@ -178,9 +177,9 @@
                     justify-content: space-between;
                     flex-wrap: wrap;
 
-                    .number__number {
+                   span.number__number {
                         width: 100%;
-                        margin-bottom: 1em;
+                        margin-bottom: 1.37em;
                         margin-right: 0;
                     }
 
