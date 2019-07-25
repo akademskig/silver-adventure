@@ -5,7 +5,7 @@ export const capitalize = (string: string) => {
         return ""
     return string.split(" ").map((subs: string) => {
         return subs.split("").map((c: string, i: number) =>
-            i == 0 ? c.toLocaleUpperCase() : c
+            i === 0 ? c.toLocaleUpperCase() : c
         ).join("")
     }).join(" ")
 }
