@@ -1,4 +1,3 @@
-import { History } from "history";
 import React from "react";
 import IconsBarMobile from "./IconsBarMobile";
 import NameBar from "./NameBar";

@@ -8,7 +8,7 @@ import { ViewMode } from "./types";
 import IconDelete from "../IconDelete";
 
 const NameBar = (props: any) => {
-    const { user, history, mode, dispatch } = props
+    const { user, history, mode } = props
     const onClickBack = (_: React.MouseEvent) => {
         history.goBack()
     }

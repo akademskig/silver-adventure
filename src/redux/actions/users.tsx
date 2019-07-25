@@ -1,7 +1,5 @@
-import { TOGGLE_MODAL } from "./modal";
 import { User } from "../../types/user";
 export const UPDATE_USERS = "UPDATE_USERS"
-
 export const FETCH_USERS_BEGIN = "FETCH_USERS_BEGIN"
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCSESS"
 export const FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
