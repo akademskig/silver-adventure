@@ -4,40 +4,44 @@ import { connect } from "react-redux";
 import UserCard from "../components/UserCard"
 import EmptyUserCard from "../components/EmptyUserCard";
 import MobileCard from "../components/mobileCard";
+import Pagination from "../components/Pagination";
+import { User } from "../types/user";
 
 class UsersList extends React.Component<any, UserListState, any> {
-
+    filterMyFavorites = (users: User[]) => {
+        const newUsers =  users.filter((u: User) => u.favorite)
+        return newUsers
+    }
+ 
     render() {
-        const { error, loading, filtered_users, page } = this.props;
-        if (error) {
-            return <div>Error! {error.message}</div>;
-        }
-
+        const { loading, page_users, page, currentPage, filtered_users } = this.props;
         if (loading) {
             return <div>Loading...</div>;
         }
+       
         return (
             <React.Fragment>
                 <div className="card-list">
-                    <EmptyUserCard mode="desktop"></EmptyUserCard>
-                    {page === "myFavorites" && filtered_users && filtered_users.map((user: any) =>
+                    {currentPage === 1 && <EmptyUserCard mode="desktop"></EmptyUserCard>}
+                    {page === "myFavorites" && page_users && page_users.map((user: any) =>
                         user.favorite &&
                         <UserCard key={user.id} user={user}></UserCard>
                     )}
-                    {page === "allContacts" && filtered_users && filtered_users.map((user: any) =>
+                    {page === "allContacts" && page_users && page_users.map((user: any) =>
                         <UserCard key={user.id} user={user}></UserCard>
                     )}
                 </div>
                 <div className="mobile-list">
-                    <EmptyUserCard mode="mobile"></EmptyUserCard>
-                    {page === "myFavorites" && filtered_users && filtered_users.map((user: any) =>
+                    {currentPage === 1 && <EmptyUserCard mode="mobile"></EmptyUserCard>}
+                    {page === "myFavorites" && page_users && page_users.map((user: any) =>
                         user.favorite &&
                         <MobileCard key={user.id} user={user}></MobileCard>
                     )}
-                    {page === "allContacts" && filtered_users && filtered_users.map((user: any) =>
+                    {page === "allContacts" && page_users && page_users.map((user: any) =>
                         <MobileCard key={user.id} user={user}></MobileCard>
                     )}
                 </div>
+                { <Pagination filtered_users={filtered_users} ></Pagination>}
             </React.Fragment>
         );
     }
@@ -45,7 +49,9 @@ class UsersList extends React.Component<any, UserListState, any> {
 
 const mapStateToProps = (state: any) => {
     return {
-        filtered_users: state.users.filtered_users,
+        page_users: state.users.page_users,
+        currentPage: state.pagination.currentPage,
+        filtered_users: state.users.filtered_users
     }
 }
 

@@ -8,12 +8,13 @@ export interface UserListState {
     error: Error | null
 }
 
-export interface FetchUsersAction {
+export interface UsersAction {
     type: string
     payload?: {
         users?: Array<User>,
         error?: Error
         filtered_users?: Array<User>,
-        user?: User
+        user?: User,
+        page_users?: Array<User>
     }
 }
