@@ -11,6 +11,7 @@
 @import "./components/profile-photo.scss";
 @import "./components/contactForm.scss";
 @import "./components/modals/modals.scss";
+@import "./components/pagination.scss";
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
@@ -27,6 +28,10 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    button {
+        cursor: pointer;
+    }
 
 }
 
