@@ -24,7 +24,6 @@ const pagination: Reducer<any, any> = (state = initialState, action: any) => {
             }
         }
         case SET_MAX_ITEMS: {
-            console.log(action.payload)
             return {
                 ...state,
                maxItems: action.payload ? action.payload.maxItems :5
