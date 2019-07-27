@@ -10,6 +10,7 @@ export class User {
         number: ""
     }]
     profile_photo = ""
+    favorite = false
     private _genders = ['men', 'women', 'lego']
     constructor(user?: any) {
         if (!user)
@@ -24,6 +25,8 @@ export class User {
             this.phones = user.phones
         if (user.profile_photo)
             this.profile_photo = user.profile_photo
+        if (user.favorite)
+            this.favorite = user.favorite
         else
             this.profile_photo = `https://randomuser.me/api/portraits/${lodash.sample(this._genders)}/${this.id}.jpg`
     }

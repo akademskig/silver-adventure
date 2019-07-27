@@ -1,13 +1,13 @@
 import { Dispatch } from "react";
-import { FetchUsersAction } from "../redux/types";
 import { fetchUsersBegin, fetchUsersSuccess, fetchUsersError, updateUsers } from "../redux/actions/users";
 import { User } from "../types/user";
+import { UsersAction } from "../redux/types";
 
 const USERS_API = "https://randomuser.me/api/?results=22&nat=gb&inc=name,gender,picture,phone,cell,email&noinfo"
 
 const USERS_LIST = "USERS_LIST"
 const fetchUsers = () => {
-    return (dispatch: Dispatch<FetchUsersAction>) => {
+    return (dispatch: Dispatch<UsersAction>) => {
         if (getUsers().length > 0) {
             return dispatch(fetchUsersSuccess(getUsers()))
         }
