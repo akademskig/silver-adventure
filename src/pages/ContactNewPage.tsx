@@ -1,10 +1,12 @@
 import React from "react";
 import ContactNew from "../containers/ContactNew";
 
-const ContactNewPage = (props: any) => {
-    return (
-       <ContactNew {...props}></ContactNew>
-    )
+class ContactNewPage extends React.Component {
+    render() {
+        return (
+            <ContactNew></ContactNew>
+        )
+    }
 }
 
 export default ContactNewPage

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch } from "react";
 import { withRouter } from "react-router";
 import { addInitialValues } from "../redux/actions/contactForm";
 import { addNewUser } from "../services/usersService";
@@ -6,6 +6,7 @@ import ContactForm from "../components/contactForm/ContactForm";
 import IconsBarMobile from "../components/IconsBarMobile";
 import ProfilePhoto from "../components/ProfilePhoto";
 import NameBar from "../components/NameBar";
+import { connect } from "react-redux";
 
 
 const ContactNew = (props: any) => {
@@ -32,7 +33,13 @@ const ContactNew = (props: any) => {
     )
 }
 
-export default withRouter(ContactNew)
+const mapDispatchToProps = (dispatch: Dispatch<any>) => {
+    return ({
+        dispatch
+    })
+}
+
+export default connect(null, mapDispatchToProps)(withRouter(ContactNew))
 
 
 
