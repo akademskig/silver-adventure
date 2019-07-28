@@ -19,6 +19,9 @@ const IconHearth = (props: any) => {
     )
 }
 
+const mapStateToProps = (state: any)=>({
+    user: state.users.user
+})
 const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     return {
         ...ownProps,
@@ -26,4 +29,4 @@ const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     }
 }
 
-export default connect(mapDispatchToProps)(IconHearth)
+export default connect(mapStateToProps, mapDispatchToProps)(IconHearth)
