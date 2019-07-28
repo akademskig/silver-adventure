@@ -1,11 +1,10 @@
 import React from "react"
 import { capitalize } from "../utils";
 import iconBack from "../assets/icons/arrow-back.svg"
-import iconHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
-import iconEdit from "../assets/icons/icon-edit.svg"
-import { Link } from "react-router-dom";
 import { ViewMode } from "./types";
 import IconDelete from "./IconDelete";
+import IconEdit from "./IconEdit";
+import IconHearth from "./IconHearth";
 
 const NameBar = (props: any) => {
     const { user, history, mode } = props
@@ -21,16 +20,14 @@ const NameBar = (props: any) => {
             <span className="contact-name__right">
                 {mode === ViewMode.VIEW &&
                     <React.Fragment>
-                        <img className="icon icon-desktop" src={iconHearthEmpty}></img>
-                        <Link to={`/contacts/edit/${user.id}`}>
-                            <img className="icon icon-desktop" src={iconEdit}></img>
-                        </Link>
+                        <IconHearth />
+                        <IconEdit />
                     </React.Fragment>
                 }
                 {mode === ViewMode.EDIT &&
                     <React.Fragment>
                         <span className="icon-text">Delete</span>
-                        <IconDelete id={user.id}></IconDelete>
+                        <IconDelete ></IconDelete>
                     </React.Fragment>
                 }
 
