@@ -29,14 +29,7 @@ const ContactEdit = (props: any) => {
                 </div>
             </div>
         </React.Fragment>
-
     )
-
 }
-
-
-
-
-
 
 export default ContactEdit
