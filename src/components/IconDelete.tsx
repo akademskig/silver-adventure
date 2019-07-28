@@ -4,17 +4,22 @@ import { toggleModal } from "../redux/actions/modal";
 import iconTrash from "../assets/icons/delete.svg"
 import { connect } from "react-redux";
 
-
 const IconDelete = (props: any) => {
-    const { id, dispatch } = props
+    const { user, dispatch } = props
 
     const onClickDelete = (id: number) => {
         dispatch(toggleModal(id))
     }
     return (
-        <img className="icon icon-desktop" onClick={() => onClickDelete(id)} src={iconTrash} alt="Icon delete"></img>
+        <img className="icon icon-desktop" onClick={() => onClickDelete(user.id)} src={iconTrash} alt="Icon delete"></img>
     )
 }
+
+const mapStateToProps = (state: any) => (
+    {
+        user: state.users.user
+    }
+)
 
 const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     return {
@@ -23,4 +28,4 @@ const mapDispatchToProps = (dispatch: any, ownProps: any) => {
     }
 }
 
-export default connect(mapDispatchToProps)(IconDelete)
+export default connect(mapStateToProps, mapDispatchToProps)(IconDelete)
