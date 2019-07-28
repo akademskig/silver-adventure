@@ -34,7 +34,7 @@ const ContactDetailsComponent = (props: any) => {
                 <div className="contact-info">
                     <div className="contact-info__email">
                         <div className="email__label label">
-                            <img src={iconEmail}></img>
+                            <img src={iconEmail} alt="Icon email"></img>
                             <label>email</label>
                         </div>
                         <div className="email__info info">{user.email}</div>
@@ -42,16 +42,15 @@ const ContactDetailsComponent = (props: any) => {
                     <div className="contact-info__phones">
                         <div className="phones__label label">
                             <div className="label__holder">
-
-                                <img src={iconPhone}></img>
+                                <img src={iconPhone} alt="Icon phone"></img>
                                 <label>numbers</label>
                             </div>
 
                         </div>
                         <ul className="phones-list__info info">
-                            {user.phones && user.phones.map((p: any) => {
+                            {user.phones && user.phones.map((p: any, i: number) => {
                                 return (
-                                    <li className="phone-item">
+                                    <li key={i}className="phone-item">
                                         <span className="phone-item__label">
                                             {p.name.toUpperCase()}
                                         </span>
