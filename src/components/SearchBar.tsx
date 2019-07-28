@@ -28,7 +28,7 @@ class SearchBar extends React.Component<any, UserListState, any>{
 
 const mapStateToProps = (state: any) => {
     return {
-        users: state.users.users,
+        users: state.users.filtered_by_favorite,
     }
 }
 

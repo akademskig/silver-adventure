@@ -15,6 +15,7 @@ export interface UsersAction {
         error?: Error
         filtered_users?: Array<User>,
         user?: User,
-        page_users?: Array<User>
+        page_users?: Array<User>,
+        filtered_by_favorite?: Array<User>
     }
 }

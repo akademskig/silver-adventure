@@ -17,9 +17,9 @@ class Pagination extends React.Component<any> {
         this.setMaxItems(window.innerWidth, 1)
     }
     initPagination = () => {
-        const { filtered_users, maxItems, currentPage, dispatch } = this.props
-        const newUsers = this.paginate(filtered_users, maxItems, currentPage)
-        const maxP = Math.ceil(filtered_users.length / maxItems) || 2
+        const {  users, maxItems, currentPage, dispatch } = this.props
+        const newUsers = this.paginate(users, maxItems, currentPage)
+        const maxP = Math.ceil(users.length / maxItems) || 2
         if (currentPage > maxP) {
             this.pageDown()
             return
@@ -35,16 +35,16 @@ class Pagination extends React.Component<any> {
         return users.slice(start, end)
     }
     pageUp = () => {
-        const { filtered_users, maxItems, currentPage, dispatch } = this.props
+        const { users, maxItems, currentPage, dispatch } = this.props
         dispatch(page(currentPage + 1))
-        dispatch(paginate(this.paginate(filtered_users, maxItems, currentPage)))
+        dispatch(paginate(this.paginate(users, maxItems, currentPage)))
         this.setMaxItems(window.innerWidth, currentPage + 1)
 
     }
     pageDown = () => {
-        const { filtered_users, maxItems, currentPage, dispatch } = this.props
+        const { users, maxItems, currentPage, dispatch } = this.props
         dispatch(page(currentPage - 1))
-        dispatch(paginate(this.paginate(filtered_users, maxItems, currentPage)))
+        dispatch(paginate(this.paginate(users, maxItems, currentPage)))
         this.setMaxItems(window.innerWidth, currentPage - 1)
     }
 

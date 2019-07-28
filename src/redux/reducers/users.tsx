@@ -4,7 +4,8 @@ import {
     FETCH_USERS_ERROR,
     FETCH_USER,
     SEARCH_USERS,
-    UPDATE_USERS
+    UPDATE_USERS,
+    FILTER_BY_FAVORITE
 } from '../actions/users'
 import { PAGINATE } from '../actions/pagination';
 import { Reducer } from 'react';
@@ -68,7 +69,14 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: UsersActi
         case PAGINATE: {
             return {
                 ...state,
-               page_users: action.payload ? action.payload.page_users : null
+                page_users: action.payload ? action.payload.page_users : null
+            }
+        }
+        case FILTER_BY_FAVORITE: {
+            return {
+                ...state,
+                filtered_by_favorite: action.payload ? action.payload.filtered_by_favorite : null,
+                filtered_users: action.payload ? action.payload.filtered_by_favorite : null
             }
         }
 

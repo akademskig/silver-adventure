@@ -6,6 +6,7 @@ export const FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
 export const FETCH_USER = "FETCH_USER"
 export const SEARCH_USERS = "SEARCH_USERS"
 export const DELETE_USER = "DELETE_USER"
+export const FILTER_BY_FAVORITE = "FILTER_BY_FAVORITE"
 
 
 export const fetchUsersBegin = () => {
@@ -49,5 +50,12 @@ export const updateUsers = (newValues: User[]) => {
     return ({
         type: UPDATE_USERS,
         payload: { users: newValues }
+    })
+}
+
+export const filterByFavorite = (newValues: User[]) => {
+    return ({
+        type: FILTER_BY_FAVORITE,
+        payload: { filtered_by_favorite: newValues }
     })
 }
