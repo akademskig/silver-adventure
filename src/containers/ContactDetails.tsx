@@ -8,13 +8,14 @@ import NameBarMobile from "../components/NameBarMobile";
 import NameBar from "../components/NameBar";
 import ProfilePhoto from "../components/ProfilePhoto";
 import { withRouter } from "react-router";
+import { ViewMode } from "../components/types";
 
 const ContactDetails = (props: any) => {
 
     const { history, user }: { user: User, history: History } = props
     return (
         <React.Fragment>
-            <IconsBarMobile {...history}></IconsBarMobile>
+            <IconsBarMobile mode={ViewMode.VIEW} history={history}></IconsBarMobile>
             {user && <ContactDetailsComponent {...props}></ContactDetailsComponent>}
         </React.Fragment>
     )

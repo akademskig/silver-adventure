@@ -2,10 +2,12 @@
 import React from "react"
 import { History } from "history";
 import iconBack from "../assets/icons/arrow-back.svg"
-import iconHearthEmpty from "../assets/icons/icon-hearth-empty.svg"
-import iconEdit from "../assets/icons/icon-edit.svg"
+import { ViewMode } from "./types";
+import IconHearth from "./IconHearth";
+import IconEdit from "./IconEdit";
+import IconDelete from "./IconDelete";
 
-const IconsBarMobile = (history: History) => {
+const IconsBarMobile = ({ history, mode }: { history: History, mode: string }) => {
     const onClickBack = (_: React.MouseEvent) => {
         history.goBack()
     }
@@ -15,8 +17,9 @@ const IconsBarMobile = (history: History) => {
                 <img src={iconBack} onClick={onClickBack}></img>
             </div>
             <span className="icons-bar__right">
-                <img src={iconHearthEmpty}></img>
-                <img src={iconEdit}></img>
+                {mode === ViewMode.VIEW && <IconHearth />}
+                {mode === ViewMode.VIEW && <IconEdit />}
+                {mode === ViewMode.EDIT && <IconDelete />}
             </span>
         </div>
     )

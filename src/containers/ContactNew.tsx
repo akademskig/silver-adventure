@@ -7,6 +7,7 @@ import IconsBarMobile from "../components/IconsBarMobile";
 import ProfilePhoto from "../components/ProfilePhoto";
 import NameBar from "../components/NameBar";
 import { connect } from "react-redux";
+import { ViewMode } from "../components/types";
 
 
 const ContactNew = (props: any) => {
@@ -21,7 +22,7 @@ const ContactNew = (props: any) => {
     }
     return (
         <React.Fragment>
-            <IconsBarMobile {...history}></IconsBarMobile>
+            <IconsBarMobile mode={ViewMode.NEW} history={history}></IconsBarMobile>
             <div className="contact-details">
                 <ProfilePhoto {...props} imgType="new"></ProfilePhoto>
                 <div className="contact-details__info">

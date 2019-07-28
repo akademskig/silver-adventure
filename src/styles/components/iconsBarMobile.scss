@@ -20,7 +20,11 @@
         .icons-bar__right {
             width: 20%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
+            img{
+                margin-left:2em;
+            }
+
         }
     }
 }

@@ -6,6 +6,7 @@ import { saveUsers } from "../services/usersService";
 import IconsBarMobile from "../components/IconsBarMobile";
 import ProfilePhoto from "../components/ProfilePhoto";
 import NameBar from "../components/NameBar";
+import { ViewMode } from "../components/types";
 
 const ContactEdit = (props: any) => {
     const { user, users, history, dispatch } = props
@@ -20,7 +21,7 @@ const ContactEdit = (props: any) => {
     }
     return (
         <React.Fragment>
-            <IconsBarMobile {...history}></IconsBarMobile>
+            <IconsBarMobile mode={ViewMode.EDIT} history={history}></IconsBarMobile>
             <div className="contact-details">
                 <ProfilePhoto {...props} imgType="edit"></ProfilePhoto>
                 <div className="contact-details__info">
