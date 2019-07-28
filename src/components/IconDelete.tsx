@@ -12,7 +12,7 @@ const IconDelete = (props: any) => {
         dispatch(toggleModal(id))
     }
     return (
-        <img className="icon icon-desktop" onClick={() => onClickDelete(id)} src={iconTrash}></img>
+        <img className="icon icon-desktop" onClick={() => onClickDelete(id)} src={iconTrash} alt="Icon delete"></img>
     )
 }
 
