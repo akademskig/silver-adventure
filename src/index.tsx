@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ErrorHandler from './errorHandler';
@@ -9,14 +8,26 @@ import { Provider } from "react-redux"
 import { createStore, applyMiddleware } from 'redux';
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension"
+import { createBrowserHistory } from 'history';
+import { routerMiddleware, ConnectedRouter } from 'connected-react-router';
+import { reduxRouterMiddleware } from './redux/reducers/router';
 
-const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
+
+const history = createBrowserHistory()
+
+const store = createStore(rootReducer(history), composeWithDevTools(
+    applyMiddleware(
+        thunk,
+        routerMiddleware(history),
+        reduxRouterMiddleware
+    )))
+
 ReactDOM.render(
     <ErrorHandler >
         <Provider store={store}>
-            <BrowserRouter>
+            <ConnectedRouter history={history}>
                 <App />
-            </BrowserRouter>
+            </ConnectedRouter >
         </Provider>
     </ErrorHandler>
     , document.getElementById('root'));
