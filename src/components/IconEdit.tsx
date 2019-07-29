@@ -14,7 +14,7 @@ const IconEdit = (props: any) => {
 }
 
 const mapStateToProps = (state: any, props: any) => ({
-    user: state.users.user ? state.users.user : props.user
+    user: props.user ? props.user : state.users.user
 })
 
 export default connect(mapStateToProps)(IconEdit)

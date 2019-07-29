@@ -10,7 +10,6 @@ const Modal = (PromptComponent: any) => {
         }
         onDelete = (userId: string) => {
             this.props.dispatch(deleteUser(userId))
-            this.props.history.push("/contacts")
             this.props.dispatch(toggleModal())
         }
         render() {
