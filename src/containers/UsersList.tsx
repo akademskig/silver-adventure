@@ -5,6 +5,7 @@ import UserCard from "../components/UserCard"
 import EmptyUserCard from "../components/EmptyUserCard";
 import MobileCard from "../components/mobileCard";
 import Pagination from "../components/Pagination";
+import { EmptyUserCardMode } from "./types";
 
 class UsersList extends React.Component<any, UserListState, any> {
 
@@ -16,13 +17,13 @@ class UsersList extends React.Component<any, UserListState, any> {
         return (
             <React.Fragment>
                 <div className="card-list">
-                    {currentPage === 1 && <EmptyUserCard mode="desktop"></EmptyUserCard>}
+                    {currentPage === 1 && <EmptyUserCard mode={EmptyUserCardMode.DESKTOP}></EmptyUserCard>}
                     {page_users && page_users.map((user: any) =>
                         <UserCard key={user.id} user={user}></UserCard>
                     )}
                 </div>
                 <div className="mobile-list">
-                    {currentPage === 1 && <EmptyUserCard mode="mobile"></EmptyUserCard>}
+                    {currentPage === 1 && <EmptyUserCard mode={EmptyUserCardMode.MOBILE}></EmptyUserCard>}
                     {page_users && page_users.map((user: any) =>
                         <MobileCard key={user.id} user={user}></MobileCard>
                     )}
