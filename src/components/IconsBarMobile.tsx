@@ -14,7 +14,7 @@ const IconsBarMobile = ({ history, mode }: { history: History, mode: string }) =
     return (
         <div className="icons-bar--mobile">
             <div className="icons-bar__left">
-                <img src={iconBack} onClick={onClickBack}></img>
+                <img src={iconBack} onClick={onClickBack} alt="Icon back"></img>
             </div>
             <span className="icons-bar__right">
                 {mode === ViewMode.VIEW && <IconHearth />}
