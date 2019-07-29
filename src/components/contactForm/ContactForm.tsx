@@ -9,7 +9,7 @@ import iconPhone from "../../assets/icons/phone.svg"
 import iconEmail from "../../assets/icons/email.svg"
 import iconInfo from "../../assets/icons/info.svg"
 
-let ContactForm = (props: any) => {
+const ContactForm = (props: any) => {
     const { handleSubmit, submitting, invalid, reset, onCancel } = props
     return (
         <form className="contact-form" onSubmit={handleSubmit} >
