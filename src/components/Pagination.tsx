@@ -16,11 +16,15 @@ class Pagination extends React.Component<any> {
         })
         this.setMaxItems(window.innerWidth, window.innerHeight, 1)
     }
+
+    componentWillUnmount = () => {
+        const { currentPage } = this.props
+        window.removeEventListener("resize", (ev: any) => {
+            this.setMaxItems(ev.target.innerWidth, ev.target.innerHeight, currentPage)
         })
-        this.setMaxItems(window.innerWidth, 1)
     }
     initPagination = () => {
-        const {  users, maxItems, currentPage, dispatch } = this.props
+        const { users, maxItems, currentPage, dispatch } = this.props
         const newUsers = this.paginate(users, maxItems, currentPage)
         const maxP = Math.ceil(users.length / maxItems) || 1
         if (currentPage > maxP) {
