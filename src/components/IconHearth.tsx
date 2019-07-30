@@ -13,9 +13,9 @@ const IconHearth = (props: any) => {
     }
     return (
         user.favorite ? 
-        <img className="icon icon-desktop" onClick={() => onClickIcon(user.id)} src={iconHeartFull} alt="Icon hearth full"></img>
+        <img className="icon icon-desktop icon-hearth" onClick={() => onClickIcon(user.id)} src={iconHeartFull} alt="Icon hearth full"></img>
         :
-        <img className="icon icon-desktop" onClick={() => onClickIcon(user.id)} src={iconHearthEmpty} alt="Icon hearth empty"></img>
+        <img className="icon icon-desktop icon-hearth" onClick={() => onClickIcon(user.id)} src={iconHearthEmpty} alt="Icon hearth empty"></img>
     )
 }
 

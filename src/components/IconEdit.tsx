@@ -8,7 +8,7 @@ const IconEdit = (props: any) => {
     const { user } = props
     return (
         <Link to={`/contacts/edit/${user.id}`}>
-            <img src={iconEdit} alt="Icon edit"></img>
+            <img src={iconEdit} alt="Icon edit" className="icon icon-edit icon-desktop"></img>
         </Link>
     )
 }

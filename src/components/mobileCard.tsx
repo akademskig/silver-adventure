@@ -22,7 +22,7 @@ class MobileCard extends React.Component<any, UserListState, any>{
                         <p>{capitalize(user.full_name)} </p>
                     </div>
                 </Link>
-                <span className="icons__right">
+                <span className="card__icons icons__right">
                     <span>
                         <IconHearth user={user}></IconHearth>
                     </span>
