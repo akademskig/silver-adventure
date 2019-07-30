@@ -9,9 +9,7 @@ const validate = (values: any) => {
   else if (!values.email.match("@"))
     errors.email = 'Invalid email'
 
-  if (!values.phones || !values.phones.length) {
-    errors.phones = { _error: 'At least one phone number must be entered' }
-  } else {
+  if (values.phones) {
     const phonesErrors: any = []
     values.phones.forEach((phone: any, phoneIndex: number) => {
       const phoneErrors: any = {}
