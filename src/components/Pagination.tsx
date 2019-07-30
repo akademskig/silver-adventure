@@ -12,7 +12,10 @@ class Pagination extends React.Component<any> {
     componentDidMount = () => {
         const { currentPage } = this.props
         window.addEventListener("resize", (ev: any) => {
-            this.setMaxItems(ev.target.innerWidth, currentPage)
+            this.setMaxItems(ev.target.innerWidth, ev.target.innerHeight, currentPage)
+        })
+        this.setMaxItems(window.innerWidth, window.innerHeight, 1)
+    }
         })
         this.setMaxItems(window.innerWidth, 1)
     }
@@ -38,43 +41,60 @@ class Pagination extends React.Component<any> {
         const { users, maxItems, currentPage, dispatch } = this.props
         dispatch(page(currentPage + 1))
         dispatch(paginate(this.paginate(users, maxItems, currentPage)))
-        this.setMaxItems(window.innerWidth, currentPage + 1)
+        this.setMaxItems(window.innerWidth, window.innerHeight, currentPage + 1)
 
     }
+
     pageDown = () => {
         const { users, maxItems, currentPage, dispatch } = this.props
         dispatch(page(currentPage - 1))
         dispatch(paginate(this.paginate(users, maxItems, currentPage)))
-        this.setMaxItems(window.innerWidth, currentPage - 1)
+        this.setMaxItems(window.innerWidth, window.innerHeight, currentPage - 1)
     }
 
-    setMaxItems = (width: number, page: number) => {
+    /**
+     * @memberof Pagination
+     * @param width - screen width
+     * @param height - screen height
+     * @param page - page number
+     * @returns void
+     *  - calculates the number of cards displayed based on screen height and width
+     */
+    setMaxItems = (width: number, height: number, page: number) => {
         const { dispatch, maxItems } = this.props
-        if (width > 1325) {
-            if (maxItems !== 11 && page === 1)
-                dispatch(setMaxItems(11))
-            else if (maxItems !== 12 && page !== 1)
-                dispatch(setMaxItems(12))
+        const modPage = page === 1 ? 1 : 0
+        let modGrid = 0
+        let modCardHeight = 160
+        let topHeight = 340
+        let bottomMargin = 50
+        let mobileCardHeight = 60
+        let desktopCardHeight = 150
+
+        const getMaxItems = () => {
+            return Math.floor((height - topHeight - bottomMargin) / modCardHeight) * modGrid - modPage
         }
-        else if (width < 1325 && width > 1000) {
-            if (maxItems !== 8 && page === 1)
-                dispatch(setMaxItems(8))
-            else if (maxItems !== 9 && page !== 1)
-                dispatch(setMaxItems(9))
+
+        if (width < 676) {
+            topHeight = 215
+            modGrid = 1
+            modCardHeight = mobileCardHeight + 10
         }
         else if (width > 676 && width < 1000) {
-            if (maxItems !== 5 && page === 1)
-                dispatch(setMaxItems(5))
-            else if (maxItems !== 6 && page !== 1)
-                dispatch(setMaxItems(6))
+            modCardHeight = desktopCardHeight + (width * 0.015)
+            modGrid = 2
         }
-        else if (width < 676 && maxItems !== 7) {
-            if (maxItems !== 7 && page === 1)
-                dispatch(setMaxItems(7))
-            else if (maxItems !== 8 && page !== 1)
-                dispatch(setMaxItems(8))
+        else if (width > 1000 && width < 1325) {
+            modCardHeight = desktopCardHeight + (width * 0.015)
+            modGrid = 3
         }
+        else if (width > 1325) {
+            modCardHeight = desktopCardHeight + (width * 0.015)
+            modGrid = 4
+        }
+        if (maxItems !== getMaxItems())
+            dispatch(setMaxItems(getMaxItems()))
     }
+
     render() {
         const { currentPage, maxPage } = this.props
         this.initPagination()
