@@ -15,7 +15,7 @@ const ProfilePhoto = (props: any) => {
                     switch (imgType) {
                         case (ViewMode.NEW): {
                             return (<div className="img-cover img-add-new">
-                                <img src={uploadIcon}></img>
+                                <img src={uploadIcon} alt="Upload icon"></img>
                             </div>)
                         }
                         case (ViewMode.EDIT): {
@@ -29,7 +29,7 @@ const ProfilePhoto = (props: any) => {
                                     </span>
 
                                     <div className="img-cover img-edit">
-                                        <img src={removeIcon}></img>
+                                        <img src={removeIcon} alt="Remove icon"></img>
                                     </div>
                                 </React.Fragment>
                             )

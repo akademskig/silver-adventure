@@ -53,7 +53,7 @@ const renderField = (props: any) => {
                     </label>
             }
             <input {...input} placeholder={label} type={type} className={inputClassName} name={input.name} />
-            {touched && ((error && <div className="error-message"><img src={iconInfo}></img><p>{error}</p></div>))}
+            {touched && ((error && <div className="error-message"><img src={iconInfo} alt="Icon info"></img><p>{error}</p></div>))}
         </span>
     )
 

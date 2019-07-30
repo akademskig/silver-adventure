@@ -1,7 +1,7 @@
 
 import lodash from "lodash"
 export class User {
-    id: string | null = null
+    id = null
     full_name = ""
     email = ""
     phones = [{

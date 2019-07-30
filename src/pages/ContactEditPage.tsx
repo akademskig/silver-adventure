@@ -8,8 +8,9 @@ import { fetchUser } from "../redux/actions/users";
 class ContactEditPage extends React.Component<any>{
     render() {
         const { users, dispatch, match, user, history } = this.props
+        const id = parseInt(match.params.id)
         if (users.length > 0) {
-            const user = users.find((u: User) => u.id == match.params.id)
+            const user = users.find((u: User) => u.id === id)
             if (!user)
                 history.goBack()
             dispatch(fetchUser(user))

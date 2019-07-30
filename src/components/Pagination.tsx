@@ -105,7 +105,7 @@ class Pagination extends React.Component<any> {
         return (
             <div className="pagination">
                 <span className="arrow arrow-left">
-                    <button className="btn arrow-left__button" disabled={currentPage == 1} onClick={() => this.pageDown()}><img src={arrowLeft} alt="Arrow left"></img></button>
+                    <button className="btn arrow-left__button" disabled={currentPage === 1} onClick={() => this.pageDown()}><img src={arrowLeft} alt="Arrow left"></img></button>
                 </span>
                 <span className="arrow arrow-right">
                     <button className="btn arrow-right__button" disabled={currentPage === maxPage} onClick={() => this.pageUp()}><img src={arrowRight} alt="Arrow right"></img></button>
