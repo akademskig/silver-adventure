@@ -31,7 +31,6 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: UsersActi
             return {
                 ...state,
                 users: action.payload ? action.payload.users : [],
-                filtered_users: action.payload ? action.payload.users : [],
                 loading: false
             }
         }
@@ -55,7 +54,6 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: UsersActi
             return {
                 ...state,
                 users: action.payload ? action.payload.users : [],
-                filtered_users: action.payload ? action.payload.users : [],
             }
         }
         case SEARCH_USERS: {
@@ -75,8 +73,8 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: UsersActi
         case FILTER_BY_FAVORITE: {
             return {
                 ...state,
-                filtered_by_favorite: action.payload ? action.payload.filtered_by_favorite : null,
-                filtered_users: action.payload ? action.payload.filtered_by_favorite : null
+                filtered_by_favorite: action.payload ? action.payload.filtered_by_favorite : [],
+                filtered_users: action.payload ? action.payload.filtered_by_favorite : [],
             }
         }
 
