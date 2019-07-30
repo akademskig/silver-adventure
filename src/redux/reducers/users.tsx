@@ -67,7 +67,7 @@ const usersReducer: Reducer<any, any> = (state = initialState, action: UsersActi
         case PAGINATE: {
             return {
                 ...state,
-                page_users: action.payload ? action.payload.page_users : null
+                page_users: action.payload ? action.payload.page_users : []
             }
         }
         case FILTER_BY_FAVORITE: {
