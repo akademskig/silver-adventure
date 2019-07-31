@@ -9,19 +9,16 @@ import arrowRight from "../assets/icons/right-arrow.svg"
 
 class Pagination extends React.Component<any> {
 
+    callback = (ev: any) => {
+        this.setMaxItems(ev.target.innerWidth, ev.target.innerHeight)
+    }
     componentDidMount = () => {
-        const { currentPage } = this.props
-        window.addEventListener("resize", (ev: any) => {
-            this.setMaxItems(ev.target.innerWidth, ev.target.innerHeight, currentPage)
-        })
-        this.setMaxItems(window.innerWidth, window.innerHeight, 1)
+        window.addEventListener("resize", this.callback)
+        this.setMaxItems(window.innerWidth, window.innerHeight)
     }
 
     componentWillUnmount = () => {
-        const { currentPage } = this.props
-        window.removeEventListener("resize", (ev: any) => {
-            this.setMaxItems(ev.target.innerWidth, ev.target.innerHeight, currentPage)
-        })
+        window.removeEventListener("resize", this.callback)
     }
     initPagination = () => {
         const { users, maxItems, currentPage, dispatch } = this.props
@@ -64,11 +61,11 @@ class Pagination extends React.Component<any> {
      * @returns void
      *  - calculates the number of cards displayed based on screen height and width
      */
-    setMaxItems = (width: number, height: number, page: number) => {
-        const { dispatch, maxItems } = this.props
-        const modPage = page === 1 ? 1 : 0
-        let modGrid = 0
-        let modCardHeight = 160
+    setMaxItems = (width: number, height: number, page?: number) => {
+        const { dispatch, maxItems, currentPage } = this.props
+        const modPage = page ? (page === 1 ? 1 : 0) : currentPage === 1 ? 1 : 0
+        let modGrid = 0 // cards per row
+        let modCardHeight = 160 // card height + margins
         let topHeight = 340
         let bottomMargin = 50
         let mobileCardHeight = 60
@@ -95,7 +92,7 @@ class Pagination extends React.Component<any> {
             modCardHeight = desktopCardHeight + (width * 0.015)
             modGrid = 4
         }
-        if (maxItems !== getMaxItems())
+        if (maxItems !== getMaxItems() && getMaxItems() > 0)
             dispatch(setMaxItems(getMaxItems()))
     }
 
