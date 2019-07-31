@@ -10,24 +10,27 @@
         border-bottom: solid 2px $theme-color-1;
         padding: 1.37em 0;
 
-        .error-message{
-            display:block;
+        .error-message {
+            display: block;
             position: absolute;
-            display:flex;
+            display: flex;
             align-items: center;
-            margin-top:0.1em;
-            img{
-                width:1em;
-                height:1em;
-                margin-right:0.2em;
+            margin-top: 0.1em;
+
+            img {
+                width: 1em;
+                height: 1em;
+                margin-right: 0.2em;
             }
-            p{
-                margin:0;
+
+            p {
+                margin: 0;
                 color: $error-red;
                 font-size: 0.875em;
-                font-weight:bold;
+                font-weight: bold;
             }
         }
+
         &:nth-child(3) {
             border-bottom: none;
         }
@@ -59,19 +62,21 @@
             }
         }
 
-       span.form-input {
+        span.form-input {
             &.number__name {
                 width: 30%;
-                min-width:120px;
+                min-width: 120px;
             }
+
             &.number__number {
                 min-width: 150px;
-                width:60%;
+                width: 60%;
             }
 
         }
-        input.form-input{
-            width:100%;
+
+        input.form-input {
+            width: 100%;
         }
 
         ul.numbers-list {
@@ -83,7 +88,7 @@
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 1.37em;
-              
+
                 input {
                     margin-right: 2%;
                 }
@@ -153,9 +158,10 @@
             }
 
             &.btn-save {
-                &:disabled{
-                    background-color:rgba($theme-color-1,0.5)
+                &:disabled {
+                    background-color: rgba($theme-color-1, 0.5)
                 }
+
                 background-color: $theme-color-1;
             }
         }
@@ -179,7 +185,7 @@
                     justify-content: space-between;
                     flex-wrap: wrap;
 
-                   span.number__number {
+                    span.number__number {
                         width: 100%;
                         margin-bottom: 1.37em;
                         margin-right: 0;
