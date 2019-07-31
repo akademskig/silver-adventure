@@ -39,9 +39,11 @@
             font-weight: bold;
             margin-bottom: 1.37em;
             display: flex;
+            align-items: baseline;
 
             img {
                 margin-right: 0.5em;
+                width: 1em;
             }
         }
 
